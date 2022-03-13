@@ -1,0 +1,44 @@
+@use 'vars';
+
+@keyframes move {
+    0%   {padding-left: 1px;}
+    25%  {padding-left: 2px;}
+    50%  {padding-left: 5px;}
+    100% {padding-left: 8px;}
+}
+
+.ButtonSecondary{
+    border-radius: 10px;
+    background-color: vars.$wine;
+    border: 1px solid vars.$black;
+    color: vars.$white;
+    font-size: 15px;
+    padding: 8px;
+    padding-inline: 25px;
+    font-weight: bold;
+    transition: linear 0.2s;
+    width:100%;
+    text-decoration: none;
+}
+
+.ButtonSecondary i{
+    visibility: hidden;
+    opacity: 0;
+    transition: linear 0.5s;
+    margin-left: 2px;
+}
+
+.ButtonSecondary:hover{
+    border: 1px solid vars.$white;
+}
+
+.ButtonSecondary:hover i{
+    transition: linear 0.5s;
+    visibility: visible;
+    position:relative;
+    opacity: 1;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

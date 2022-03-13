@@ -1,0 +1,23 @@
+@use 'vars';
+
+.TabsContainer{
+    font-size: 5px !important;
+    text-transform: none !important;
+    font-weight: bold !important;
+}
+
+.itemsTab{
+    display: flex !important;
+}
+
+.dividerTabs{
+    margin-right: 50px !important;
+    border: 1px solid vars.$wine !important;
+}
+
+.TabsContainer{
+    font-size: 15px !important;
+    color: vars.$wine !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+

@@ -1,0 +1,20 @@
+@use 'vars';
+
+.socialButtonSecondary{
+    display: flex;
+    margin-inline: 5px;
+    background-color: vars.$wine;
+    color: vars.$white;
+    padding: 7px;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: linear 0.2s;
+}
+
+.socialButtonSecondary:hover{
+    background-color: vars.$white;
+    cursor: pointer;
+    color: vars.$wine;
+    transition: linear 0.2s;
+}

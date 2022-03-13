@@ -1,0 +1,24 @@
+@use 'vars';
+
+.container{
+    display: block;
+    text-align: center;
+    padding: 50px;
+}
+
+.container h2{
+    color: vars.$wine;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.container p{
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.container img{
+    width: 300px;
+}
+

@@ -1,0 +1,57 @@
+@use 'vars';
+
+footer{
+    display: flex;
+    background-color: vars.$wine;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoFooter{
+    width: 20%;
+    padding: 20px;
+    background-color: vars.$beige;
+}
+
+.Social{
+    width: 20%;
+    padding: 20px;
+}
+
+.Menu{
+    width: 60%;
+}
+
+.MenuFooter{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.MenuFooter li{
+    padding: 20px;
+    color: vars.$white;
+}
+
+.SocialFooter{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.SocialFooter li{
+    padding: 5px;
+}
+
+.address, .phone, .hours{
+    font-size: 13px;
+}
+
+.linkFooter{
+    color: vars.$wine;
+    text-decoration: none;
+}
+
+.linkFooter:hover{
+    text-decoration: underline;
+}

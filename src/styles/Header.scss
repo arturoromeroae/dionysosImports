@@ -1,0 +1,62 @@
+@use 'vars';
+
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.menuContainer{
+    background-color: vars.$white;
+    height: 75px;
+    box-shadow: 0 0 20px 0 vars.$black;
+}
+
+.menuList{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.socialContainer{
+    display: flex;
+    align-items: center;
+}
+
+.search{
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 20px;
+    border: 1px solid vars.$black;
+}
+
+.search h4{
+    padding-left: 8px;
+}
+
+.search:hover{
+    background-color: vars.$wine;
+    color: vars.$white;
+    border: 1px solid transparent;
+}
+
+.linkItem{
+    text-decoration: none;
+    color: vars.$black;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.linkItem:hover{
+    color: vars.$wine-light;
+    transition: all 0.4s;
+}
+
+.active{
+    color: vars.$wine;
+    font-weight: 800;
+}

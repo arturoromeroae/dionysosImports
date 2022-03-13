@@ -1,0 +1,34 @@
+@use 'vars';
+
+.ButtonSite{
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid vars.$black;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px;
+    padding-inline: 25px;
+    margin-inline: 20px;
+    font-weight: bold;
+    transition: linear 0.2s;
+    text-decoration: none;
+    color: vars.$black;
+}
+
+.ButtonSite i{
+    padding-right: 5px;
+}
+
+.ButtonSite:hover{
+    background-color: vars.$wine;
+    color: vars.$white;
+    border: 1px solid vars.$white;
+    transition: linear 0.2s;
+}
+
+.activeButton{
+    background-color: vars.$wine;
+    color: vars.$white;
+    border: 1px solid vars.$white;
+    transition: linear 0.2s;
+}

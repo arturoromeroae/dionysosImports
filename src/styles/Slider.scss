@@ -1,0 +1,19 @@
+@use 'vars';
+
+.containerSlider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerImg{
+    width: 100%;
+    margin-top: 70px;
+}
+
+.sliderTitle{
+    position: absolute;
+    font-size: 60px;
+    font-weight: 800;
+    color: vars.$wine-light;
+}

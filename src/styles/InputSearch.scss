@@ -1,0 +1,26 @@
+@use 'vars';
+
+.searchContainer{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.searchInput{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    border-radius: 20px;
+    background-color: vars.$beige;
+    transition: all 0.5s;
+}
+
+.searchInput:hover{
+    background-color: vars.$beige-dark;
+    transition: all 0.5s;
+}
+
+.searchInput:focus{
+    background-color: vars.$beige;
+    transition: all 0.5s;
+}

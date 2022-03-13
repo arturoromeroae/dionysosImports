@@ -1,0 +1,45 @@
+@use 'vars';
+
+.contaienerProductsSlider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleRecomendations{
+    font-size: 35px;
+    color: vars.$wine;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 800;
+}
+
+.iconSlider{
+    font-size: 80px;
+    cursor: pointer;
+    color: vars.$wine;
+    padding: 50px;
+}
+
+.contentContainer{
+    text-align: center;
+    width: 50%;
+}
+
+.imageProductSlider{
+    width: 100px;
+    padding: 50px;
+}
+
+.titleProductSlider{
+    color: vars.$wine;
+    font-weight: 500;
+    font-size: 35px;
+    padding: 30px;
+}
+
+.contentContainer p{
+    font-size: 20px;
+    font-weight: 300;
+}
