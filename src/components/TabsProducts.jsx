@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Filters from './Filters';
 import InputSearch from './InputSearch';
 import Divider from '@mui/material/Divider';
+import Select from './Select';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -61,28 +62,48 @@ const TabsProducts = ({ tab1, tab2, tab3, tab4 }) => {
             <InputSearch />
             <TabPanel value={value} index={0}>
                 <div className="itemsTab">
-                    <Filters />
+                    <Filters filterTitle='Filter Wines'>
+                        <Select label='Country' />
+                        <Select label='Region' />
+                        <Select label='Producer' />
+                        <Select label='Size' />
+                    </Filters>
                     <Divider className='dividerTabs' orientation="vertical" flexItem />
                     {tab1}
                 </div>
             </TabPanel>
             <TabPanel className="itemsTab" value={value} index={1}>
                 <div className="itemsTab">
-                    <Filters />
+                    <Filters filterTitle='Filter Liquors'>
+                        <Select label='Country' />
+                        <Select label='Region' />
+                        <Select label='Producer' />
+                        <Select label='Size' />
+                    </Filters>
                     <Divider className='dividerTabs' orientation="vertical" flexItem />
                     {tab2}
                 </div>
             </TabPanel>
             <TabPanel className="itemsTab" value={value} index={2}>
                 <div className="itemsTab">
-                    <Filters />
+                    <Filters filterTitle='Filter Beers'>
+                        <Select label='Country' />
+                        <Select label='Region' />
+                        <Select label='Producer' />
+                        <Select label='Size' />
+                    </Filters>
                     <Divider className='dividerTabs' orientation="vertical" flexItem />
                     {tab3}
                 </div>
             </TabPanel>
             <TabPanel className="itemsTab" value={value} index={3}>
                 <div className="itemsTab">
-                    <Filters />
+                    <Filters filterTitle='Filter Foods'>
+                        <Select label='Country' />
+                        <Select label='Region' />
+                        <Select label='Producer' />
+                        <Select label='Size' />
+                    </Filters>
                     <Divider className='dividerTabs' orientation="vertical" flexItem />
                     {tab4}
                 </div>

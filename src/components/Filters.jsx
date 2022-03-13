@@ -1,40 +1,13 @@
-import React from 'react';
+import React, { Children } from 'react';
 import '@styles/Filters.scss';
 
-const Filters = () => {
+const Filters = ({ children, filterTitle }) => {
     return (
         <div>
-            <h3 className='titleFilter'>Filter Products</h3>
+            <h3 className='titleFilter'>{filterTitle}</h3>
             <form>
                 <div className='filterContainer'>
-                    <div className='itemsFilter'>
-                        <label>Country</label>
-                        <select>
-                            <option selected>All</option>
-                            <option>Greece</option>
-                        </select>
-                    </div>
-                    <div className='itemsFilter'>
-                        <label>Region</label>
-                        <select>
-                            <option selected>All</option>
-                            <option></option>
-                        </select>
-                    </div>
-                    <div className='itemsFilter'>
-                        <label>Producer</label>
-                        <select>
-                            <option selected>All</option>
-                            <option></option>
-                        </select>
-                    </div>
-                    <div className='itemsFilter'>
-                        <label>Size</label>
-                        <select>
-                            <option selected>All</option>
-                            <option></option>
-                        </select>
-                    </div>
+                    {children}
                 </div>
                 <div className='buttonsContainer'>
                     <button className='filterButton'>Filter</button>

@@ -4,48 +4,10 @@
     margin: 20px;
 }
 
-.filterContainer select{
-    width: 100%;
-    padding: 5px;
-    border: 0;
-    background-color: vars.$beige-dark;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently */
-}
-
-.filterContainer label{
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently */
-}
-
-.filterContainer select:hover{
-    background-color: vars.$beige;
-    transition: all 0.3s;
-}
-
-.filterContainer select:focus{
-    color: vars.$wine;
-    background-color: vars.$beige;
-}
-
-.itemsFilter{
-    padding: 10px;
-}
-
 .titleFilter{
     text-align: center;
     color: vars.$wine;
+    padding-inline: 10px;
 }
 
 .buttonsContainer{
