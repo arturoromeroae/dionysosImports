@@ -13,7 +13,7 @@
   ],
   "author": "Arturo Romero <ajruwork@gmail.com>",
   "license": "MIT",
-  "homepage": "https://arturoromeroae.github.io",
+  "homepage": "https://arturoromeroae.github.io/dionysosImports",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
