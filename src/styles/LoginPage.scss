@@ -1,0 +1,61 @@
+@use 'vars';
+
+.loginTitle{
+    color: vars.$wine;
+    font-size: 35px;
+}
+
+.loginForm{
+    padding: 40px;
+}
+
+.inputForm{
+    margin: 20px;
+    text-align: left;
+}
+
+.inputForm label{
+    padding: 10px;
+}
+
+.inputForm input{
+    padding: 10px;
+    border-radius: 20px;
+    border: 0;
+    background-color: vars.$white;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.containerLogin{
+    position: absolute;
+    text-align: center;
+}
+
+.loginButton{
+    padding: 10px;
+    border: 0;
+    border-radius: 20px;
+    background-color: vars.$wine;
+    color: vars.$white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 2s;
+}
+
+.loginButton:hover{
+    background-color: vars.$wine-light;
+    transition: all 2s;
+}
+
+.loginButton i{
+    padding-left: 5px;
+}
+
+.loginButton:hover i{
+    animation-name: move;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+}

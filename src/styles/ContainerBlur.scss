@@ -1,0 +1,14 @@
+@use 'vars';
+
+.containerBlur{
+    width: 50%;
+    height: 450px;
+    border-radius: 20px;
+    background-color: vars.$beige;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    opacity: 0.9;
+    filter: blur(1px);
+    box-shadow: 5px 0 12px 0px black;
+}

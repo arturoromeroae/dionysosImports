@@ -1,0 +1,11 @@
+@use 'vars';
+
+.contanerLayoutBg{
+    background-image: url(../assets/images/dyonisos_logo_bg_white.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
