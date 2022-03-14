@@ -16,7 +16,7 @@ const Customer = () => {
     <>
       <Header />
       <Banner srcBanner={bannerCustomer} title='Customer' />
-      <InputSearch />
+      <InputSearch placeHolder="Search" />
       <div className='containerCustomer'>
         <Filters filterTitle='Filter Customers'>
           <Select label='City' />

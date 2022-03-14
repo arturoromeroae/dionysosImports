@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import '@styles/InputSearch.scss';
 
-const InputSearch = () => {
+const InputSearch = ({ placeHolder }) => {
     return (
         <div className='searchContainer'>
             <div
@@ -13,7 +13,7 @@ const InputSearch = () => {
             >
                 <InputBase
                     sx={{ ml: 1, flex: 1 }}
-                    placeholder="Search"
+                    placeholder={placeHolder}
                     inputProps={{ 'aria-label': 'search' }}
                 />
                 <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">

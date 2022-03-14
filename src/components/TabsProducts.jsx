@@ -59,7 +59,7 @@ const TabsProducts = ({ tab1, tab2, tab3, tab4 }) => {
                 </Tabs>
             </Box>
 
-            <InputSearch />
+            <InputSearch placeHolder="Search" />
             <TabPanel value={value} index={0}>
                 <div className="itemsTab">
                     <Filters filterTitle='Filter Wines'>

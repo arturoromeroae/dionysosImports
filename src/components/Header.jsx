@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import '@styles/Header.scss';
 import banner from '@images/dionysos-logo.png';
 import { Link, useLocation } from "react-router-dom";
+import Modal from '@components/Modal'
 import Button from './Button';
+import SearchForm from './SearchForm';
 
 const Header = () => {
   const [showText, setShowText] = useState('hidden');
+  const [openModal, setOpenModal] = useState(false);
   const location = useLocation();
 
   return (
@@ -26,10 +29,18 @@ const Header = () => {
             <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Customer</Link>
           </li>
           <li>
-            <div className='search' onMouseOver={() => setShowText('displayText')} onMouseOut={() => setShowText('hidden')}>
+            <div className='search' 
+                onMouseOver={() => setShowText('displayText')} onMouseOut={() => setShowText('hidden')}
+                onClick={() => setOpenModal(true)}
+            >
               <i id='searchIcon' className='fa-solid fa-magnifying-glass'></i>
               <h4 id='searchTitle' className={showText}>Search</h4>
             </div>
+            {!!openModal && (
+                <Modal>
+                    <SearchForm setOpenModal={setOpenModal} />
+                </Modal>
+            )}
           </li>
           <li>
             <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />

@@ -1,12 +1,19 @@
 @use 'vars';
 
+.containerLogin{
+    position: absolute;
+    text-align: center;
+    margin-top: 80px;
+}
+
 .loginTitle{
     color: vars.$wine;
     font-size: 35px;
 }
 
 .loginForm{
-    padding: 40px;
+    display: flex;
+    align-items: center;
 }
 
 .inputForm{
@@ -30,11 +37,6 @@
 
 .inputForm input::placeholder{
     color: vars.$beige-dark;
-}
-
-.containerLogin{
-    position: absolute;
-    text-align: center;
 }
 
 .loginButton{
@@ -62,4 +64,8 @@
     animation-duration: 1s;
     animation-direction: alternate;
     animation-timing-function: ease;
+}
+
+.disclaimerLogin{
+    padding: 20px;
 }

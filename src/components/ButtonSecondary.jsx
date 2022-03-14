@@ -6,7 +6,7 @@ const ButtonSecondary = ({ url, text }) => {
     <div>
         <a href={url} className='ButtonSecondary'>
             <span>{ text }</span>
-            <i class="fa-solid fa-angle-right"></i>
+            <i className="fa-solid fa-angle-right"></i>
         </a>
     </div>
   )

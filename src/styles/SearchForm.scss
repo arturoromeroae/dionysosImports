@@ -1,0 +1,48 @@
+@use 'vars';
+
+.TitleForm{
+    padding: 10px;
+    color: vars.$wine;
+}
+
+.searchForm{
+    background-color: vars.$white;
+    width: 60%;
+    height: 150px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.searchForm label{
+    display: block;
+}
+
+.CloseModal{
+    cursor: pointer;
+    margin-left: 370px;
+    position: absolute;
+    font-size: 30px;
+    color: vars.$wine;
+}
+
+.CloseModal:hover{
+    color: vars.$wine-light;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .searchForm{
+        width: 80%;
+    }
+
+    .searchForm textarea{
+        width: 250px;
+        height: 200px;
+    }
+
+    .CloseModal{
+        float: right;
+        margin-left: 128px;
+        font-size: 20px;
+    }
+}
