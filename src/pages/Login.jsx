@@ -16,7 +16,7 @@ const Login = () => {
           <form className='loginForm'>
             <div className='inputForm'>
               <label>Email*</label>
-              <input type='email' maxLength={120} required />
+              <input type='email' maxLength={120} placeholder='E.g. example@email.com' required />
             </div>
             <div className='inputForm'>
               <label>Password*</label>
@@ -25,13 +25,12 @@ const Login = () => {
             <div>
               <button className='loginButton' type='submit'>
                 Submit
-                <i class="fa-solid fa-angle-right"></i>
+                <i class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </form>
         </div>
       </ContainerWithBg>
-      <Footer />
     </>
   )
 }

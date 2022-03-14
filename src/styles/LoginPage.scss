@@ -28,6 +28,10 @@
     font-size: 15px;
 }
 
+.inputForm input::placeholder{
+    color: vars.$beige-dark;
+}
+
 .containerLogin{
     position: absolute;
     text-align: center;
