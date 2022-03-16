@@ -1,5 +1,5 @@
 import React from 'react';
-import myStyles from '../styles/Tabs.scss';
+import '../styles/Tabs.scss';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';

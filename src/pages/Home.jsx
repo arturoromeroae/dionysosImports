@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from '@components/Slider';
 import TextImage from '@components/TextImage';
 import logo from '@images/dionysos-logo.png';
@@ -10,7 +10,6 @@ import bottle from '@images/bottle.png';
 import Footer from '@components/Footer';
 
 const Home = () => {
-
     return (
     <>
         <Header />

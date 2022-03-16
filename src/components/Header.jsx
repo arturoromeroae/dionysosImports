@@ -5,11 +5,17 @@ import { Link, useLocation } from "react-router-dom";
 import Modal from '@components/Modal'
 import Button from './Button';
 import SearchForm from './SearchForm';
+import { useAuth } from '@context/authContext';
 
 const Header = () => {
   const [showText, setShowText] = useState('hidden');
   const [openModal, setOpenModal] = useState(false);
+  const { user, logout } = useAuth()
   const location = useLocation();
+
+  const handleLogout = async () => {
+    await logout();
+  }
 
   return (
     <nav>
@@ -28,6 +34,11 @@ const Header = () => {
           <li>
             <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Customer</Link>
           </li>
+          {user && (
+            <li>
+              <Link className={(location.pathname === '/admin-panel') ? 'active linkItem' : 'linkItem'} to="/admin-panel">Admin Dashboard</Link>
+            </li>
+          )}
           <li>
             <div className='search' 
                 onMouseOver={() => setShowText('displayText')} onMouseOut={() => setShowText('hidden')}
@@ -43,7 +54,15 @@ const Header = () => {
             )}
           </li>
           <li>
-            <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />
+            {!user && (
+              <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />
+            )}
+            {user && (
+              <button className='logoutButton' onClick={handleLogout}>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                LOGOUT
+              </button>
+            )}
           </li>
         </ul>
       </div>

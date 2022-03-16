@@ -7,19 +7,23 @@ import Admin from '@pages/Admin';
 import Customer from '@pages/Customer';
 import Products from '@pages/Products';
 import Login from '@pages/Login';
+import AuthProvider from '@context/authContext';
+import ProtectedRoute from '@components/ProtectedRoute';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/about-us' element={<About />} />
-          <Route exact path='/customer' element={<Customer />} />
-          <Route exact path='/products' element={<Products />} />
-          <Route exact path='/login' element={<Login />} />
-          <Route exact path='/admin-panel' element={<Admin />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/about-us' element={<About />} />
+            <Route exact path='/customer' element={<Customer />} />
+            <Route exact path='/products' element={<Products />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/admin-panel' element={<ProtectedRoute />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </>
   )

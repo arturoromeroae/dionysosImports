@@ -60,3 +60,29 @@ nav{
     color: vars.$wine;
     font-weight: 800;
 }
+
+.logoutButton{
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid vars.$black;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px;
+    padding-inline: 25px;
+    margin-inline: 20px;
+    font-weight: 800;
+    transition: linear 0.2s;
+    text-decoration: none;
+    color: vars.$black;
+}
+
+.logoutButton:hover{
+    background-color: vars.$wine;
+    color: vars.$white;
+    border: 1px solid vars.$white;
+    transition: linear 0.2s;
+}
+
+.logoutButton i{
+    padding-right: 5px;
+}

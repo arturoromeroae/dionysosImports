@@ -6,9 +6,10 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: ['regenerator-runtime/runtime.js', './src/index.js'],
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js',
@@ -20,6 +21,8 @@ module.exports = {
 		alias: {
 			'@containers': path.resolve(__dirname, 'src/containers/'),
             '@components': path.resolve(__dirname, 'src/components/'),
+			'@context': path.resolve(__dirname, 'src/context/'),
+			'@config': path.resolve(__dirname, 'src/config/'),
 			'@pages': path.resolve(__dirname, 'src/pages/'),
             '@styles': path.resolve(__dirname, 'src/styles/'),
 			'@fonts': path.resolve(__dirname, 'src/assets/fonts/'),
@@ -92,6 +95,7 @@ module.exports = {
 			]
 		}),
 		new CleanWebpackPlugin(),
+		new Dotenv(),
     ],
 	devServer: {
         historyApiFallback: true,

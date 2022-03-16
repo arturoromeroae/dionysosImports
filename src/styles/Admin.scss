@@ -1,0 +1,11 @@
+@use 'vars';
+
+.alertWelcome{
+    background-color: vars.$beige;
+}
+
+.welcomeTitle{
+    padding-top: 100px;
+    padding-bottom: 20px;
+    text-align: center;
+}
