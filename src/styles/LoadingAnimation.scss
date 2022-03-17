@@ -1,0 +1,17 @@
+@use 'vars';
+
+.loadingAnimation{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoadingContainer{
+    margin-top: 10%;
+    text-align: center;
+}
+
+// .LoadingContainer{
+//     text-align: center;
+// }

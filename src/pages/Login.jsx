@@ -12,6 +12,8 @@ const Login = () => {
     email: '',
     password: ''
   })
+  var errorMsg = '';
+
   const { login } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -26,10 +28,15 @@ const Login = () => {
       await login(user.email, user.password);
       navigate("/admin-panel");
     } catch (error) {
-      setError(error.message);
+      if (error.message == 'Firebase: Error (auth/wrong-password).') {
+        setError('Password Incorrect');
+      }else if(error.message == 'Firebase: Error (auth/user-not-found).'){
+        setError('User not found');
+      }else{
+        setError('Error, contact the administrator');
+      }
     }
   };
-
 
   return (
     <>
@@ -38,7 +45,7 @@ const Login = () => {
         <ContainerBlur />
         <div className='containerLogin'>
           <h2 className='loginTitle'>Login</h2>
-          {error && <p>{error}</p>}
+          {error ? <p className='errorLogin'>{error}</p> : ''}
           <form className='loginForm' onSubmit={handleSubmit}>
             <div>
               <div className='inputForm'>

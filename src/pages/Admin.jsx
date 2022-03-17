@@ -2,11 +2,12 @@ import React from 'react';
 import { useAuth } from '@context/authContext';
 import '@styles/Admin.scss';
 import Header from '@components/Header';
+import LoadingAnimation from '@components/LoadingAnimation';
 
 const Admin = () => {
   const { user, loading } = useAuth();
 
-  if(loading) return <h1>Loading</h1>
+  if(loading) return <LoadingAnimation />
 
   return (
     <>
