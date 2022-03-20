@@ -87,7 +87,11 @@ nav{
     padding-right: 5px;
 }
 
-.menuMobileIcon #menuMobile{
+.menuMobileIcon{
+    display: none;
+}
+
+#menuMobile{
     display: none;
 }
 
