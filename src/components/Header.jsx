@@ -21,7 +21,7 @@ const Header = () => {
     <nav>
       <div className='menuContainer'>
         <ul className='menuList'>
-          <li><img src={banner} /></li>
+          <li><img className='logoMenu' src={banner} /></li>
           <li>
             <Link className={(location.pathname === '/') ? 'active linkItem' : 'linkItem'} to="/">Home</Link>
           </li>
@@ -53,7 +53,7 @@ const Header = () => {
                 </Modal>
             )}
           </li>
-          <li>
+          <li className='loginButtonList'>
             {!user && (
               <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />
             )}

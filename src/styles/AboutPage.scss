@@ -10,3 +10,18 @@
     padding: 20px;
     height: 350px;
 }
+
+@media only screen and (max-width: 600px) {
+    .aboutTextContainer{
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logoAbout{
+        width: 50%;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        height: auto;
+    }
+}

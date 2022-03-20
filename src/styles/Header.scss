@@ -86,3 +86,25 @@ nav{
 .logoutButton i{
     padding-right: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+    .menuContainer{
+        display: flex;
+    }
+    .menuList{
+        justify-content:left;
+        align-items: center;
+    }
+    .logoMenu{
+        width: 80%;
+    }
+    .linkItem{
+        display: none;
+    }
+    .search{
+        display: none;
+    }
+    .loginButtonList{
+        display: none;
+    }
+}

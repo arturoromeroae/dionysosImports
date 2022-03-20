@@ -59,7 +59,7 @@ const ProductsSlider = ({ iconLeft, iconRight }) => {
         <div>
           <i onClick={handleLeftProduct} className={ iconLeft + ' iconSlider iconSliderLeft'}></i>
         </div>
-        <div>
+        <div className='containerImageProductSlider'>
           <img className='imageProductSlider' src={image} />
         </div>
         <div className='contentContainer'>

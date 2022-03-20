@@ -76,3 +76,12 @@
     50%  {font-size: 120px;}
     100% {font-size: 140px;}
 }
+
+@media only screen and (max-width: 600px) {
+    .containerImageProductSlider{
+        display: block;
+    }
+    .contaienerProductsSlider{
+        display: block;
+    }
+}

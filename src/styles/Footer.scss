@@ -13,7 +13,8 @@ footer{
 .logoFooter{
     width: 20%;
     padding: 20px;
-    background-color: vars.$beige;
+    background-color: vars.$wine;
+    color: vars.$white;
 }
 
 .Social{
@@ -51,10 +52,29 @@ footer{
 }
 
 .linkFooter{
-    color: vars.$wine;
+    color: vars.$white;
     text-decoration: none;
 }
 
 .linkFooter:hover{
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    footer{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .logoFooter{
+        width: 100%;
+        padding: 0;
+    }
+    .SocialFooter li{
+        padding: 0;
+    }
+    .Social{
+        width: 100%;
+        padding: 0;
+    }
 }
