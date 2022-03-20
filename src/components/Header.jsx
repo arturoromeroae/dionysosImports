@@ -17,10 +17,15 @@ const Header = () => {
     await logout();
   }
 
+  const menuMobile = () => {
+    const menuMobile = document.getElementById('menuMobile')
+    menuMobile.style.display = menuMobile.style.display === 'none' ? 'block' : 'none';
+  }
+
   return (
     <nav>
       <div className='menuContainer'>
-        <ul className='menuList'>
+        <ul id='menuList' className='menuList'>
           <li><img className='logoMenu' src={banner} /></li>
           <li>
             <Link className={(location.pathname === '/') ? 'active linkItem' : 'linkItem'} to="/">Home</Link>
@@ -64,6 +69,15 @@ const Header = () => {
               </button>
             )}
           </li>
+          <li className='menuMobileIcon'><i id='menuIconMobile' className="fa-solid fa-bars" onClick={menuMobile}></i></li>
+        </ul>
+      </div>
+      <div id='menuMobile'>
+        <ul className='listMenuMobile'>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Products</li>
+          <li>Customer</li>
         </ul>
       </div>
     </nav>
