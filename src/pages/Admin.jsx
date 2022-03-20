@@ -3,6 +3,7 @@ import { useAuth } from '@context/authContext';
 import '@styles/Admin.scss';
 import Header from '@components/Header';
 import LoadingAnimation from '@components/LoadingAnimation';
+import TabsAdmin from '@components/TabsAdmin';
 
 const Admin = () => {
   const { user, loading } = useAuth();
@@ -15,6 +16,7 @@ const Admin = () => {
     <div className='alertWelcome'>
       <h2 className='welcomeTitle'>Welcome {user.email}</h2>
     </div>
+    <TabsAdmin />
     </>
   )
 }

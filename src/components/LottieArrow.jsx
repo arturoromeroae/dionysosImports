@@ -7,10 +7,10 @@ const LottieArrow = () => {
   return (
     <div className='animationContainer'>
         <Player
-            autoplay
-            loop
-            src={arrow}
-            className="arrowAnimation"
+          autoplay
+          loop
+          src={arrow}
+          className="arrowAnimation"
         />
     </div>
   )

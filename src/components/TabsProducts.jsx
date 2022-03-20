@@ -52,10 +52,10 @@ const TabsProducts = ({ tab1, tab2, tab3, tab4 }) => {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs TabIndicatorProps={{ style: {backgroundColor: "#780725"}}} value={value} onChange={handleChange} aria-label="basic tabs example">
-                <Tab className='TabsContainer' label="Wine" {...a11yProps(0)} />
-                <Tab className='TabsContainer' label="Liquor" {...a11yProps(1)} />
-                <Tab className='TabsContainer' label="Beer" {...a11yProps(2)} />
-                <Tab className='TabsContainer' label="Foods" {...a11yProps(3)} />
+                    <Tab className='TabsContainer' label="Wine" {...a11yProps(0)} />
+                    <Tab className='TabsContainer' label="Liquor" {...a11yProps(1)} />
+                    <Tab className='TabsContainer' label="Beer" {...a11yProps(2)} />
+                    <Tab className='TabsContainer' label="Foods" {...a11yProps(3)} />
                 </Tabs>
             </Box>
 

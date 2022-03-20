@@ -19,7 +19,32 @@
     font-size: 80px;
     cursor: pointer;
     color: vars.$wine;
-    padding: 50px;
+    padding: 60px;
+    transition: linear 0.1s;
+}
+
+.iconSlider:hover{
+    color: vars.$wine-light;
+    transition: linear 0.2s;
+}
+
+.iconSlider:active{
+    color: vars.$black;
+    transition: linear 0.1s;
+}
+
+.iconSliderRight:active{
+    padding: 65px;
+    animation-name: moveArrow;
+    animation-duration: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.iconSliderLeft:active{
+    padding: 65px;
+    animation-name: moveArrow;
+    animation-duration: 0.1s;
+    animation-delay: 0.1s;
 }
 
 .contentContainer{
@@ -29,6 +54,7 @@
 
 .imageProductSlider{
     width: 100px;
+    height: 360px;
     padding: 50px;
 }
 
@@ -42,4 +68,11 @@
 .contentContainer p{
     font-size: 20px;
     font-weight: 300;
+}
+
+@keyframes moveArrow {
+    0%   {font-size: 80px;}
+    25%  {font-size: 100px;}
+    50%  {font-size: 120px;}
+    100% {font-size: 140px;}
 }

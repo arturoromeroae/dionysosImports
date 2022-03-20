@@ -59,7 +59,7 @@ const Header = () => {
             )}
             {user && (
               <button className='logoutButton' onClick={handleLogout}>
-                <i class="fa-solid fa-right-from-bracket"></i>
+                <i className="fa-solid fa-right-from-bracket"></i>
                 LOGOUT
               </button>
             )}

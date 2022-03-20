@@ -6,10 +6,13 @@ import Header from '@components/Header';
 import ImageLeft from '@components/ImageLeft';
 import imges from '@images/images-test.png'
 import ProductsSlider from '@components/ProductsSlider';
-import bottle from '@images/bottle.png';
 import Footer from '@components/Footer';
+import getData from '../config/getData';
 
 const Home = () => {
+    const data = getData();
+    console.log(data);
+
     return (
     <>
         <Header />
@@ -17,7 +20,6 @@ const Home = () => {
         <ProductsSlider 
             iconLeft = "fa-solid fa-angle-left" 
             iconRight = "fa-solid fa-angle-right" 
-            image = {bottle}
             title = "Pietroso Rosso di Montalcino"
             content = "This is excellent sangiovese, with flavors of dried cherry and cocoa powder and soft tannins. Pair it with  grilled meats and poultry. or pasta with meat sauces."
         />
