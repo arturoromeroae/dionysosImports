@@ -11,7 +11,6 @@ import getData from '../config/getData';
 
 const Home = () => {
     const data = getData();
-    console.log(data);
 
     return (
     <>

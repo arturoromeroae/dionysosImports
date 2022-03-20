@@ -48,7 +48,6 @@ const TabsAdmin = () => {
         setValue(newValue);
     };
     const { user, loading } = useAuth();
-    console.log(user)
 
     return (
         <Box sx={{ width: '100%' }}>

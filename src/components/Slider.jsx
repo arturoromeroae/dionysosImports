@@ -29,7 +29,7 @@ const Slider = () => {
 
 
   const image = imageArray[banner % imageArray.length];
-  console.log(loading);
+
   return (
     <div className='containerSlider'>
         <h1 className='sliderTitle'>Importers and Distributors of <br /> fine wine, beer, and liquor</h1>
