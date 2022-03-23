@@ -6,6 +6,8 @@ import bottle3 from '@images/bottle-3.png';
 import bottle4 from '@images/bottle-4.png';
 import bottle5 from '@images/bottle-5.png';
 import bottle6 from '@images/bottle-6.png';
+import { Player } from '@lottiefiles/react-lottie-player';
+import Touch from '@images/touch-icon.json';
 
 const productsImageArray = [bottle, bottle2, bottle3, bottle4, bottle5, bottle6];
 const productsTextArray = [
@@ -48,6 +50,18 @@ const ProductsSlider = ({ iconLeft, iconRight }) => {
     }
   }
 
+  const hideAnimation = () => {
+    const animation = document.getElementById('animationImageProductSlider');
+    const textAnimation = document.getElementById('textImageProductSlider');
+    animation.style.display = 'none';
+    textAnimation.style.display = 'none';
+
+    setTimeout(() => {
+      animation.style.display = 'block';
+      textAnimation.style.display = 'block';
+    }, 8000);
+  }
+
   const image = productsImageArray[product % productsImageArray.length];
   const content = productsTextArray[text % productsTextArray.length];
   const titleProduct = productsTitleArray[title % productsTitleArray.length];
@@ -55,18 +69,32 @@ const ProductsSlider = ({ iconLeft, iconRight }) => {
   return (
     <>
       <h4 className='titleRecomendations'>Our Recomendations</h4>
-      <div className='contaienerProductsSlider'>
-        <div>
+      <div className='containerProductsSlider'>
+        <div className='arrowProductSlider'>
           <i onClick={handleLeftProduct} className={ iconLeft + ' iconSlider iconSliderLeft'}></i>
         </div>
-        <div className='containerImageProductSlider'>
+        <div
+            onTouchStart={handleRigthProduct}
+            onTouchEnd={hideAnimation}
+            className='containerImageProductSlider'
+        >
+          <div className='touchIconContainer'>
+            <Player
+              id='animationImageProductSlider'
+              autoplay
+              loop
+              src={Touch}
+              className="touchAnimation"
+            />
+            <p id='textImageProductSlider'>Touch to see more products</p>
+          </div>
           <img className='imageProductSlider' src={image} />
         </div>
         <div className='contentContainer'>
           <h3 className='titleProductSlider'>{ titleProduct }</h3>
           <p>{ content }</p>
         </div>
-        <div>
+        <div className='arrowProductSlider'>
           <i onClick={handleRigthProduct} className={ iconRight + ' iconSlider iconSliderRight' }></i>
         </div>
       </div>

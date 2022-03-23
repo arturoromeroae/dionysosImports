@@ -30,3 +30,10 @@
     opacity: 1;
     transition: linear 0.1s;
 }
+
+@media only screen and (max-width: 800px) {
+    .sliderTitle{
+        font-size: 40px;
+        text-align: center;
+    }
+}

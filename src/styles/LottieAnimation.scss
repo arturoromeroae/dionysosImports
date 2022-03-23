@@ -10,3 +10,9 @@
     margin-top: 30%;
     position: absolute;
 }
+
+@media only screen and (max-width: 800px) {
+    .animationContainer{
+        margin-top: 100%;
+    }
+}

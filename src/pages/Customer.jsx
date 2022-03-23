@@ -10,13 +10,30 @@ import distinctiveImage from '@images/distinctive.jpg';
 import Divider from '@mui/material/Divider';
 import Select from '@components/Select';
 import '@styles/CustomerPage.scss';
+import Button from '@components/Button';
+import { useAuth } from '@context/authContext';
 
 const Customer = () => {
+  const { user, logout } = useAuth()
+
+  const handleLogout = async () => {
+    await logout();
+  }
+
   return (
     <>
       <Header />
       <Banner srcBanner={bannerCustomer} title='Customer' />
-      <InputSearch placeHolder="Search" />
+      <div className='loginContainer'>
+        <div className='inputSearchCustomer'>
+          <InputSearch placeHolder="Search" />
+        </div>
+        <div className='loginButtonCustomer'>
+            {!user && (
+              <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />
+            )}
+        </div>
+      </div>
       <div className='containerCustomer'>
         <Filters filterTitle='Filter Customers'>
           <Select label='City' />

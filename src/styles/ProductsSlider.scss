@@ -1,6 +1,6 @@
 @use 'vars';
 
-.contaienerProductsSlider{
+.containerProductsSlider{
     width: 100%;
     display: flex;
     align-items: center;
@@ -52,6 +52,11 @@
     width: 50%;
 }
 
+.contentContainer p{
+    font-size: 20px;
+    font-weight: 300;
+}
+
 .imageProductSlider{
     width: 100px;
     height: 360px;
@@ -65,9 +70,8 @@
     padding: 30px;
 }
 
-.contentContainer p{
-    font-size: 20px;
-    font-weight: 300;
+.touchIconContainer{
+    display: none;
 }
 
 @keyframes moveArrow {
@@ -77,11 +81,49 @@
     100% {font-size: 140px;}
 }
 
-@media only screen and (max-width: 600px) {
-    .containerImageProductSlider{
+@media only screen and (max-width: 800px) {
+    .containerProductsSlider{
         display: block;
+        width: 100%;
+        text-align: center;
     }
-    .contaienerProductsSlider{
+    
+    .contentContainer{
         display: block;
+        width: 100%;
+    }
+
+    .titleRecomendations{
+        font-size: 30px;
+    }
+
+    .arrowProductSlider{
+        display: none;
+    }
+
+    .contentContainer p{
+        padding: 20px;
+    }
+
+    .titleProductSlider{
+        font-size: 25px;
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .touchIconContainer{
+        display: block;
+        position: absolute;
+        margin-left: 30%;
+        margin-top: 85%;
+        text-align: center;
+    }
+
+    .touchIconContainer p{
+        margin-top: -20px;
+    }
+
+    .touchAnimation{
+        width: 50%;
     }
 }

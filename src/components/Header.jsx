@@ -58,17 +58,14 @@ const Header = () => {
                 </Modal>
             )}
           </li>
-          <li className='loginButtonList'>
-            {!user && (
-              <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />
-            )}
-            {user && (
-              <button className='logoutButton' onClick={handleLogout}>
-                <i className="fa-solid fa-right-from-bracket"></i>
-                LOGOUT
-              </button>
-            )}
-          </li>
+          {user && (
+            <li className='loginButtonList'>
+                <button className='logoutButton' onClick={handleLogout}>
+                  <i className="fa-solid fa-right-from-bracket"></i>
+                  LOGOUT
+                </button>
+            </li>
+          )}
           <li className='menuMobileIcon'><i id='menuIconMobile' className="fa-solid fa-bars" onClick={menuMobile}></i></li>
         </ul>
       </div>
