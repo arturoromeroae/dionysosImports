@@ -71,10 +71,18 @@ const Header = () => {
       </div>
       <div id='menuMobile'>
         <ul className='listMenuMobile'>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Products</li>
-          <li>Customer</li>
+          <li>
+            <Link className={(location.pathname === '/') ? 'active linkMobile' : 'linkMobile'} to="/">Home</Link>
+          </li>
+          <li>
+            <Link className={(location.pathname === '/about-us') ? 'active linkMobile' : 'linkMobile'} to="/about-us">About Us</Link>
+          </li>
+          <li>
+            <Link className={(location.pathname === '/products') ? 'active linkMobile' : 'linkMobile'} to="/products">Products</Link>
+          </li>
+          <li>
+            <Link className={(location.pathname === '/customer') ? 'active linkMobile' : 'linkMobile'} to="/customer">Customer</Link>
+          </li>
         </ul>
       </div>
     </nav>

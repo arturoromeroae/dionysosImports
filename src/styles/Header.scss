@@ -99,26 +99,33 @@ nav{
     .menuContainer{
         display: flex;
     }
+
     .menuList{
         justify-content:none;
     }
+
     .logoMenu{
         width: 80%;
     }
+
     .linkItem{
         display: none;
     }
+
     .search{
         display: none;
     }
+
     .loginButtonList{
         display: none;
     }
+
     .menuMobileIcon{
         display: block;
         margin-left: 80px;
         font-size: 30px;
     }
+
     .listMenuMobile{
         width: 100%;
         background-color: vars.$white;
@@ -126,11 +133,22 @@ nav{
         font-size: 25px;
         padding: 20px;
     }
+
     .listMenuMobile li{
         padding: 20px;
         text-align: center;
     }
+
     #menuMobile{
         display: none;
+    }
+
+    .linkMobile{
+        text-decoration: none;
+        color: vars.$black;
+    }
+
+    .active{
+        color: vars.$wine;
     }
 }
