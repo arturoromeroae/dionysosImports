@@ -21,3 +21,15 @@
     font-family: 'Montserrat', sans-serif !important;
 }
 
+.itemsProducts{
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+}
+
+.loadingProductsContainer{
+    width: 80%;
+    margin-top: 15%;
+}
+

@@ -1,14 +1,29 @@
+import { useEffect, useState } from 'react';
+
 const API = process.env.API;
 
-const getData = async () => {
-  
-  try {
-    const response = await fetch(API);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log('Fetch Error', error);
-  };
+const getData = (props) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    
+    fetch(API, requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        setData(result)
+        setLoading(false)
+      }
+    )
+    .catch(error => console.log('error', error));
+  }, 3000)})
+
+  return { data, loading };
 };
 
-export default getData;
+export { getData };

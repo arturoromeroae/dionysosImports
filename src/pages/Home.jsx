@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from '@components/Slider';
 import TextImage from '@components/TextImage';
 import logo from '@images/dionysos-logo.png';
@@ -7,11 +7,9 @@ import ImageLeft from '@components/ImageLeft';
 import imges from '@images/images-test.png'
 import ProductsSlider from '@components/ProductsSlider';
 import Footer from '@components/Footer';
-import getData from '../config/getData';
 
 const Home = () => {
-    const data = getData();
-
+    
     return (
     <>
         <Header />

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Tabs.scss';
+import '@styles/Tabs.scss';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -8,6 +8,8 @@ import Filters from './Filters';
 import InputSearch from './InputSearch';
 import Divider from '@mui/material/Divider';
 import Select from './Select';
+import LinearProgress from '@mui/material/LinearProgress';
+import Stack from '@mui/material/Stack';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -42,7 +44,7 @@ function a11yProps(index) {
     };
 }
 
-const TabsProducts = ({ tab1, tab2, tab3, tab4 }) => {
+const TabsProducts = ({ tab1, tab2, tab3, tab4, loading }) => {
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -69,7 +71,13 @@ const TabsProducts = ({ tab1, tab2, tab3, tab4 }) => {
                         <Select label='Size' />
                     </Filters>
                     <Divider className='dividerTabs' orientation="vertical" flexItem />
-                    {tab1}
+                    
+                    <div className='itemsProducts'>
+                        {tab1}
+                        <Stack className='loadingProductsContainer' spacing={2}>
+                            {loading && <LinearProgress color="inherit" className='loadingProductsBar' />}
+                        </Stack>
+                    </div>
                 </div>
             </TabPanel>
             <TabPanel className="itemsTab" value={value} index={1}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '@styles/global.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '@pages/Home';
@@ -9,23 +9,28 @@ import Products from '@pages/Products';
 import Login from '@pages/Login';
 import AuthProvider from '@context/authContext';
 import ProtectedRoute from '@components/ProtectedRoute';
+import { ProductsContext } from '@config/DataContext';
 
 const App = () => {
+  const {
+    searchedData, 
+    loading,
+    setSearchDataValue
+  } = useContext(ProductsContext)
+
   return (
-    <>
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/about-us' element={<About />} />
-            <Route exact path='/customer' element={<Customer />} />
-            <Route exact path='/products' element={<Products />} />
-            <Route exact path='/login' element={<Login />} />
-            <Route exact path='/admin-panel' element={<ProtectedRoute />} />
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/about-us' element={<About />} />
+          <Route exact path='/customer' element={<Customer />} />
+          <Route exact path='/products' element={<Products data={searchedData} loading={loading} />} />
+          <Route exact path='/login' element={<Login />} />
+          <Route exact path='/admin-panel' element={<ProtectedRoute />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
 

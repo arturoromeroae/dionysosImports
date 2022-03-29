@@ -5,9 +5,9 @@ const Select = ({ label }) => {
     return (
         <div className='itemsFilter'>
             <label>{label}</label>
-            <select>
-                <option selected>All</option>
-                <option>Greece</option>
+            <select defaultValue={'all'}>
+                <option value='all'>All</option>
+                <option value='country'>Greece</option>
             </select>
         </div>
   )
