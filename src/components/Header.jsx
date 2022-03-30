@@ -37,6 +37,9 @@ const Header = () => {
           <li>
             <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Customer</Link>
           </li>
+          <li>
+            <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Contact</Link>
+          </li>
           {user && (
             <li>
               <Link className={(location.pathname === '/admin-panel') ? 'active linkItem' : 'linkItem'} to="/admin-panel">Admin Dashboard</Link>

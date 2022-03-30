@@ -3,10 +3,9 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import Banner from '@components/Banner';
 import TabsProducts from '@components/TabsProducts';
-import bannerProducts from '@images/banner_products.jpg'
+import bannerProducts from '@images/banner_products.jpg';
 import CardProducts from '@components/CardProducts';
-import beerImage from '@images/beer.jpg'
-import Filters from '@components/Filters';
+import beerImage from '@images/beer.jpg';
 
 const Products = (props) => {
   const name = props.data.items;

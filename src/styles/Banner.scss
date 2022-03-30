@@ -3,7 +3,10 @@
 .bannerTemplates{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
 }
 
 .BannerPage{
@@ -15,6 +18,8 @@
 
 .BannerTitle{
     position: absolute;
-    font-size: 35px;
+    font-weight: 400;
+    font-size: 80px;
     color: vars.$white;
+    padding-left: 10%;
 }

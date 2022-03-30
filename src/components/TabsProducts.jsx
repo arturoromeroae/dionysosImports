@@ -51,9 +51,15 @@ const TabsProducts = ({ tab1, tab2, tab3, tab4, loading }) => {
     };
 
     return (
-        <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs TabIndicatorProps={{ style: {backgroundColor: "#780725"}}} value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Box className='containerAllTabs' sx={{ width: '100%' }}>
+            <Box sx={{ backgroundColor: 'transparent', borderBottom: 1, borderColor: 'transparent' }}>
+                <Tabs TabIndicatorProps={{ 
+                    style: {
+                        height: '100%', 
+                        backgroundColor: "rgba(203, 203, 203, 0.9)",
+                        borderRadius: '6px',
+                    }
+                }} value={value} onChange={handleChange} aria-label="basic tabs example">
                     <Tab className='TabsContainer' label="Wine" {...a11yProps(0)} />
                     <Tab className='TabsContainer' label="Liquor" {...a11yProps(1)} />
                     <Tab className='TabsContainer' label="Beer" {...a11yProps(2)} />
@@ -70,7 +76,6 @@ const TabsProducts = ({ tab1, tab2, tab3, tab4, loading }) => {
                         <Select label='Producer' />
                         <Select label='Size' />
                     </Filters>
-                    <Divider className='dividerTabs' orientation="vertical" flexItem />
                     
                     <div className='itemsProducts'>
                         {tab1}

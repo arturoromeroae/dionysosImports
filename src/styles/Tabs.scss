@@ -1,9 +1,16 @@
 @use 'vars';
 
+.containerAllTabs{
+    padding-top: 300px;
+}
+
 .TabsContainer{
     font-size: 5px !important;
     text-transform: none !important;
-    font-weight: bold !important;
+}
+
+.containerAllTabs::selection{
+    background-color: red; 
 }
 
 .itemsTab{
@@ -17,7 +24,7 @@
 
 .TabsContainer{
     font-size: 15px !important;
-    color: vars.$wine !important;
+    color: vars.$white !important;
     font-family: 'Montserrat', sans-serif !important;
 }
 

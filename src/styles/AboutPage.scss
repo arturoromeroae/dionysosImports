@@ -3,12 +3,14 @@
 .aboutTextContainer{
     display: flex;
     align-items: center;
+    background-color: vars.$wine;
+    padding-top: 19.5%;
 }
 
 .logoAbout{
-    width: 30%;
-    padding: 20px;
-    height: 350px;
+    width: 100%;
+    padding: 50px;
+    height: auto;
 }
 
 @media only screen and (max-width: 600px) {
