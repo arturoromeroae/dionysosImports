@@ -1,39 +1,52 @@
 @use 'vars';
 
 footer{
+    font-family: 'Montserrat', sans-serif;
     left: 0;
     bottom: 0;
     width: 100%;
     display: flex;
-    background-color: vars.$wine;
+    background-color: vars.$dark-blue;
     align-items: center;
     justify-content: center;
 }
 
 .logoFooter{
-    width: 20%;
+    display: flex;
+    width: 40%;
     padding: 20px;
-    background-color: vars.$wine;
+    background-color: vars.$dark-blue;
     color: vars.$white;
+    align-items: center;
+}
+
+.logoFooter p{
+    font-size: 13px;
+}
+
+.logoFooter img{
+    width: 200px;
+    height: auto;
+    padding-right: 60px;
 }
 
 .Social{
-    width: 20%;
-    padding: 20px;
+    width: 10%;
+    padding-right: 60px;
 }
 
 .Menu{
-    width: 60%;
+    width: 50%;
 }
 
 .MenuFooter{
     display: flex;
     list-style: none;
-    justify-content: center;
+    justify-content: right;
 }
 
 .MenuFooter li{
-    padding: 20px;
+    padding-inline: 30px;
     color: vars.$white;
 }
 
@@ -47,10 +60,6 @@ footer{
     padding: 5px;
 }
 
-.address, .phone, .hours{
-    font-size: 13px;
-}
-
 .linkFooter{
     color: vars.$white;
     text-decoration: none;
@@ -58,6 +67,25 @@ footer{
 
 .linkFooter:hover{
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 1030px) and (max-width: 1600px) {
+    .MenuFooter li{
+        padding-inline: 20px;
+    }
+
+    .logoFooter p{
+        font-size: 10px;
+    }
+    
+    .logoFooter img{
+        width: 150px;
+        height: auto;
+    }
+
+    .SocialFooter li{
+        padding: 0;
+    }
 }
 
 @media only screen and (max-width: 600px) {

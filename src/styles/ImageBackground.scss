@@ -1,0 +1,56 @@
+@use 'vars';
+
+.containerImageBg{
+    background-image: url('@images/wine-bannerBg.jpg');
+    height: 850px;
+    text-align: center;
+}
+
+.containerImageBg h2{
+    font-size: 60px;
+    color: vars.$wine-Extralight;
+    margin-bottom: 15%;
+    padding-top: 6%;
+}
+
+.buttonImageBg{
+    background-color: vars.$wine;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    font-weight: 400px;
+    padding: 10px 40px;
+    border-radius: 20px;
+    color: vars.$wine-Extralight;
+    cursor: pointer;
+    transition: linear 0.3s;
+    text-decoration: none;
+}
+
+.buttonImageBg:hover{
+    background-color: vars.$wine-light;
+    transition: linear 0.3s;
+}
+
+@media only screen and (min-width: 1030px) and (max-width: 1600px) {
+    .containerImageBg{
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .containerImageLeft{
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        height: 300px;
+    }
+
+    .containerImageLeft img{
+        width: 50%;
+    }
+
+    .imageLeft{
+        margin-top: 12%;
+    }
+}

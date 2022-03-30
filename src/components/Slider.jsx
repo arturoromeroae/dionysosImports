@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import videoWine from '@videos/wine-video.mp4';
 import '@styles/Slider.scss';
 import LottieArrow from '@components/LottieArrow';
 

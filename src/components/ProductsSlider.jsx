@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '@styles/ProductsSlider.scss';
 import bottle from '@images/bottle.png';
 import bottle2 from '@images/bottle-2.png';
@@ -67,11 +67,15 @@ const ProductsSlider = ({ iconLeft, iconRight }) => {
   const titleProduct = productsTitleArray[title % productsTitleArray.length];
 
   return (
-    <>
+    <div className='recomendationsContainer'>
       <h4 className='titleRecomendations'>Our Recomendations</h4>
       <div className='containerProductsSlider'>
         <div className='arrowProductSlider'>
           <i onClick={handleLeftProduct} className={ iconLeft + ' iconSlider iconSliderLeft'}></i>
+        </div>
+        <div className='contentContainer'>
+          <h3 className='titleProductSlider'>{ titleProduct }</h3>
+          <p>{ content }</p>
         </div>
         <div
             onTouchStart={handleRigthProduct}
@@ -90,15 +94,11 @@ const ProductsSlider = ({ iconLeft, iconRight }) => {
           </div>
           <img className='imageProductSlider' src={image} />
         </div>
-        <div className='contentContainer'>
-          <h3 className='titleProductSlider'>{ titleProduct }</h3>
-          <p>{ content }</p>
-        </div>
         <div className='arrowProductSlider'>
           <i onClick={handleRigthProduct} className={ iconRight + ' iconSlider iconSliderRight' }></i>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

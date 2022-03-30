@@ -1,15 +1,15 @@
 @use 'vars';
 
 nav{
+    font-family: 'Montserrat', sans-serif;
     position: fixed;
     width: 100%;
     z-index: 1;
+    background-color: rgba(120, 7, 37, 0.75);
 }
 
 .menuContainer{
-    background-color: vars.$white;
-    height: 75px;
-    box-shadow: 0 0 20px 0 vars.$black;
+    height: 90px;
 }
 
 .menuList{
@@ -24,29 +24,15 @@ nav{
     align-items: center;
 }
 
-.search{
-    display: flex;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.5s;
-    border-radius: 20px;
-    border: 1px solid vars.$black;
-}
-
-.search h4{
-    padding-left: 8px;
-}
-
-.search:hover{
-    background-color: vars.$wine;
-    color: vars.$white;
-    border: 1px solid transparent;
+.menuListSearch{
+    width: 30%;
+    margin-left: 10%;
 }
 
 .linkItem{
     text-decoration: none;
-    color: vars.$black;
-    font-size: 15px;
+    color: vars.$white;
+    font-size: 20px;
     font-weight: 500;
     transition: all 0.3s;
 }
@@ -57,7 +43,7 @@ nav{
 }
 
 .active{
-    color: vars.$wine;
+    color: vars.$white;
     font-weight: 800;
 }
 
@@ -93,6 +79,15 @@ nav{
 
 #menuMobile{
     display: none;
+}
+
+.menuListLogo{
+    margin-right: -100px;
+}
+
+.logoMenu{
+    width: 60%;
+    padding-top: 5px;
 }
 
 @media only screen and (max-width: 800px) {

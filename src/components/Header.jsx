@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import '@styles/Header.scss';
-import banner from '@images/dionysos-logo.png';
+import banner from '@images/logo_white 1.png';
 import { Link, useLocation } from "react-router-dom";
-import Modal from '@components/Modal'
-import Button from './Button';
-import SearchForm from './SearchForm';
+import InputSearch from './InputSearch';
 import { useAuth } from '@context/authContext';
 
 const Header = () => {
@@ -26,7 +24,7 @@ const Header = () => {
     <nav>
       <div className='menuContainer'>
         <ul id='menuList' className='menuList'>
-          <li><img className='logoMenu' src={banner} /></li>
+          <li className='menuListLogo'><img className='logoMenu' src={banner} /></li>
           <li>
             <Link className={(location.pathname === '/') ? 'active linkItem' : 'linkItem'} to="/">Home</Link>
           </li>
@@ -44,20 +42,7 @@ const Header = () => {
               <Link className={(location.pathname === '/admin-panel') ? 'active linkItem' : 'linkItem'} to="/admin-panel">Admin Dashboard</Link>
             </li>
           )}
-          <li>
-            <div className='search' 
-                onMouseOver={() => setShowText('displayText')} onMouseOut={() => setShowText('hidden')}
-                onClick={() => setOpenModal(true)}
-            >
-              <i id='searchIcon' className='fa-solid fa-magnifying-glass'></i>
-              <h4 id='searchTitle' className={showText}>Search</h4>
-            </div>
-            {!!openModal && (
-                <Modal>
-                    <SearchForm setOpenModal={setOpenModal} />
-                </Modal>
-            )}
-          </li>
+          <li className='menuListSearch'><InputSearch placeHolder="Search" /></li>
           {user && (
             <li className='loginButtonList'>
                 <button className='logoutButton' onClick={handleLogout}>
