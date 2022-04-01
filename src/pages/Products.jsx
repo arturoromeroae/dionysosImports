@@ -21,6 +21,7 @@ const TabPanel = styled(TabPanelUnstyled)`
 const Products = (props) => {
   const name = props.data.items;
   useEffect(() => console.log(name), [props.loading])
+  const n = 12; // Or something else
   
   return (
     <>
@@ -38,6 +39,22 @@ const Products = (props) => {
               </Filters>
             </div>
             <div className='productsListContainer'>
+              {
+                [...Array(n)].map((e, i) => <CardProducts
+                                              key='aas59'
+                                              imageUrl={beerImage} 
+                                              title='Beaujolais'
+                                              country='Country'
+                                              region='Region'
+                                              Produced='Producer'
+                                              size='Size'
+                                              style='Style'
+                                              practices='Practices'
+                                              grapes='Grapes'
+                                              other='Other Features'
+                                              price='$000,000'
+                                            />)
+              }
               {
                 name && name.map(test => (
                   <CardProducts
