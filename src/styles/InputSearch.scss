@@ -3,13 +3,12 @@
 .searchContainer{
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin-block: 20px;
 }
 
 .searchInput{
     display: flex;
     align-items: center;
-    width: 60%;
     border-radius: 20px;
     background-color: vars.$beige;
     transition: all 0.5s;

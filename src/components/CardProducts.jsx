@@ -1,33 +1,47 @@
 import React from 'react';
-import '@styles/CardProducts.scss'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import '@styles/CardProducts.scss';
+import cart from '@images/cart.svg';
+import RatingStar from '@components/RatingStar';
 
-const CardProducts = ({ imageUrl, title, code, content, country, type, size }) => {
+const CardProducts = ({ imageUrl,
+                        title, 
+                        country, 
+                        region, 
+                        produced, 
+                        size, 
+                        style, 
+                        practices, 
+                        grapes, 
+                        other,
+                        price, 
+                        content 
+                    }) => {
     return (
-        <Card sx={{ margin: 1, maxWidth: 245 }}>
-            <CardActionArea>
-                <CardMedia
-                    className='imageCard'
-                    component="img"
-                    image={imageUrl}
-                    alt="green iguana"
-                />
-                <CardContent>
-                    <div className='cardContainer'>
-                        <h3>{ title }</h3>
-                        <h6>{ code }</h6>
-                        <h5>{ country }</h5>
-                        <h5>{ type }</h5>
-                        <h5>{ size }</h5>
-                        <br />
-                        <p>{ content }</p>
+        <div className='cardContainer'>
+            <div>
+                <div>
+                    <RatingStar />
+                    <img className='cartIcon' src={cart} />
+                </div>
+                <div className='cardItemsContainer'>
+                    <div className='cardContentContainer'>
+                        <h3 className='titleCard'>{ title }</h3>
+                        <p>Country <span className='descriptionCard'>{ country }</span></p>
+                        <p>Region <span className='descriptionCard'>{ region }</span></p>
+                        <p>Produced <span className='descriptionCard'>{ produced }</span></p>
+                        <p>Size <span className='descriptionCard'>{ size }</span></p>
+                        <p>Style <span className='descriptionCard'>{ style }</span></p>
+                        <p>Practices <span className='descriptionCard'>{ practices }</span></p>
+                        <p>Grapes <span className='descriptionCard'>{ grapes }</span></p>
+                        <p>Other Features <span className='descriptionCard'>{ other }</span></p>
                     </div>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                    <div className='cardImageContainer'>
+                        <img className='imageCard' src={imageUrl} alt="Image not found" />
+                    </div>
+                </div>
+                <h2 className='priceCard'>{ price }</h2>
+            </div>
+        </div>
     )
 }
 

@@ -4,7 +4,7 @@ nav{
     font-family: 'Montserrat', sans-serif;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 100;
     background-color: rgba(120, 7, 37, 0.75);
 }
 
@@ -88,6 +88,16 @@ nav{
 .logoMenu{
     width: 60%;
     padding-top: 5px;
+}
+
+@media only screen and (min-width: 1030px) and (max-width: 1600px) {
+    .linkItem{
+        font-size: 15px;
+    }
+
+    .logoMenu{
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
