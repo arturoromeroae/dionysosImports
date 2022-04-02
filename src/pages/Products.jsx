@@ -27,9 +27,7 @@ const Products = (props) => {
   useEffect(() => console.log(productsInfoLength), [props.loading])
   
   const increaseLimit = () => {
-    
-      setLimit(limit + 12)
-    
+    setLimit(limit + 12)
   };
 
   return (

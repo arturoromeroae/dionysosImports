@@ -11,7 +11,7 @@ const getData = (props) => {
   myHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "prodclass": 0,
+    "prodclass": 4,
     "country": 0,
     "prodType": 0,
     "prodVariety": 0,
