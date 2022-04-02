@@ -44,8 +44,14 @@
 }
 
 @media only screen and (max-width: 800px) {
+
     .sliderTitle{
         font-size: 40px;
-        text-align: center;
+        line-height: 65px;
+    }
+
+    .bannerImg{
+        width: 100%;
+        height: 750px;
     }
 }

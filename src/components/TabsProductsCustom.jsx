@@ -53,7 +53,7 @@ const TabsList = styled(TabsListUnstyled)`
   z-index: 1;
 `;
 
-const TabsProductsCustom = ({children}) => {
+const TabsProductsCustom = ({loading, children}) => {
     return (
         <TabsUnstyled defaultValue={0}>
             <TabsList>

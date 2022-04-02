@@ -9,7 +9,7 @@ nav{
 }
 
 .menuContainer{
-    height: 90px;
+    height: 40px;
 }
 
 .menuList{
@@ -25,14 +25,14 @@ nav{
 }
 
 .menuListSearch{
-    width: 30%;
+    width: 20%;
     margin-left: 10%;
 }
 
 .linkItem{
     text-decoration: none;
     color: vars.$white;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
     transition: all 0.3s;
 }
@@ -86,18 +86,8 @@ nav{
 }
 
 .logoMenu{
-    width: 60%;
+    width: 30%;
     padding-top: 5px;
-}
-
-@media only screen and (min-width: 1030px) and (max-width: 1600px) {
-    .linkItem{
-        font-size: 15px;
-    }
-
-    .logoMenu{
-        width: 50%;
-    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -110,14 +100,18 @@ nav{
     }
 
     .logoMenu{
-        width: 80%;
+        width: 90%;
+    }
+
+    .menuListLogo{
+        margin-right: 0;
     }
 
     .linkItem{
         display: none;
     }
 
-    .search{
+    .menuListSearch{
         display: none;
     }
 
@@ -126,13 +120,14 @@ nav{
     }
 
     .menuMobileIcon{
+        width: 60%;
         display: block;
-        margin-left: 80px;
+        padding-left: 40%;
         font-size: 30px;
+        color: vars.$white;
     }
 
     .listMenuMobile{
-        width: 100%;
         background-color: vars.$white;
         list-style: none;
         font-size: 25px;

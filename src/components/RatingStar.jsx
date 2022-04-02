@@ -6,7 +6,7 @@ const RatingStar = () => {
 
     return (
         <>
-            <Rating className='rating' name="read-only" value='3' readOnly />
+            <Rating className='rating' name="read-only" value={3} readOnly />
         </>
     )
 }

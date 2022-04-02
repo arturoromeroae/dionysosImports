@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '@styles/ProductsPage.scss'
 import Header from '@components/Header';
 import Footer from '@components/Footer';
@@ -11,6 +11,8 @@ import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import TabsProductsCustom from '../components/TabsProductsCustom';
 import Filters from '@components/Filters';
 import Select from '@components/Select';
+import LinearProgress from '@mui/material/LinearProgress';
+import Stack from '@mui/material/Stack';
 
 const TabPanel = styled(TabPanelUnstyled)`
   width: 100%;
@@ -19,10 +21,17 @@ const TabPanel = styled(TabPanelUnstyled)`
 `;
 
 const Products = (props) => {
-  const name = props.data.items;
-  useEffect(() => console.log(name), [props.loading])
-  const n = 12; // Or something else
+  const [limit, setLimit] = useState(12)
+  const productsInfo = props.data.data;
+  const productsInfoLength = props.lengthData
+  useEffect(() => console.log(productsInfoLength), [props.loading])
   
+  const increaseLimit = () => {
+    
+      setLimit(limit + 12)
+    
+  };
+
   return (
     <>
       <Header />
@@ -38,33 +47,23 @@ const Products = (props) => {
                   <Select label='Size' />
               </Filters>
             </div>
+            {props.loading &&
+              <Stack className='loadingProductsContainer' spacing={2}>
+                <LinearProgress color="inherit" className='loadingProductsBar' />
+              </Stack>
+            }
             <div className='productsListContainer'>
               {
-                [...Array(n)].map((e, i) => <CardProducts
-                                              key='aas59'
-                                              imageUrl={beerImage} 
-                                              title='Beaujolais'
-                                              country='Country'
-                                              region='Region'
-                                              Produced='Producer'
-                                              size='Size'
-                                              style='Style'
-                                              practices='Practices'
-                                              grapes='Grapes'
-                                              other='Other Features'
-                                              price='$000,000'
-                                            />)
-              }
-              {
-                name && name.map(test => (
+                productsInfo && productsInfo.slice(0, limit).map(resp => (
                   <CardProducts
-                    key={test.id}
-                    imageUrl={beerImage} 
-                    title={test.name}
-                    country={test.region}
-                    region={test.region}
-                    Produced={"Producer"}
-                    size='Size'
+                    loading={props.loading}
+                    key={resp.prodCode}
+                    imageUrl={resp.imagen} 
+                    title={resp.prodName}
+                    country={resp.country}
+                    region={resp.region}
+                    Produced={resp.producer}
+                    size={resp.size}
                     style='Style'
                     practices='Practices'
                     grapes='Grapes'
@@ -74,6 +73,11 @@ const Products = (props) => {
                 ))
               }
             </div>
+            {!props.loading &&
+              <div className='buttonLoadMore'>
+                <button onClick={increaseLimit}>Load More</button>
+              </div>
+            }
           </TabPanel>
           <TabPanel value={1}>
           <div className='productsFilterContainer'>
@@ -86,9 +90,9 @@ const Products = (props) => {
             </div>
             <div className='productsListContainer'>
               {
-                name && name.map(test => (
+                productsInfo && productsInfo.map(test => (
                   <CardProducts
-                    key={test.id}
+                    key={test.prodCode}
                     imageUrl={beerImage} 
                     title={test.name}
                     code="8018-1111"
@@ -112,9 +116,9 @@ const Products = (props) => {
             </div>
             <div className='productsListContainer'>
               {
-                name && name.map(test => (
+                productsInfo && productsInfo.map(test => (
                   <CardProducts
-                    key={test.id}
+                    key={test.prodCode}
                     imageUrl={beerImage} 
                     title={test.name}
                     code="8018-1111"
@@ -138,9 +142,9 @@ const Products = (props) => {
             </div>
             <div className='productsListContainer'>
               {
-                name && name.map(test => (
+                productsInfo && productsInfo.map(test => (
                   <CardProducts
-                    key={test.id}
+                    key={test.prodCode}
                     imageUrl={beerImage} 
                     title={test.name}
                     code="8018-1111"

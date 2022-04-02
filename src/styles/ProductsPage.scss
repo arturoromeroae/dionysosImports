@@ -11,3 +11,29 @@
 .productsFilterContainer{
     width: 25%;
 }
+
+.buttonLoadMore{
+    position: fixed;
+    right: 2%;
+    bottom: 13%;
+}
+
+.buttonLoadMore button{
+    background-color: rgba(120, 7, 37, 0.75);
+    border: 0;
+    padding: 20px;
+    border-radius: 100px;
+    transition: linear 0.3s;
+    color: vars.$white;
+    cursor: pointer;
+}
+
+.buttonLoadMore button:hover{
+    background-color: rgba(120, 7, 37, 1);
+    transition: linear 0.3s;
+}
+
+.loadingProductsContainer{
+    width: 100%;
+    margin-top: 15%;
+}

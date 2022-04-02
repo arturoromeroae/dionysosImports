@@ -1,5 +1,6 @@
 import React from 'react';
 import '@styles/CardProducts.scss';
+import notFound from '@images/wine_not_found.png';
 import cart from '@images/cart.svg';
 import RatingStar from '@components/RatingStar';
 
@@ -36,7 +37,15 @@ const CardProducts = ({ imageUrl,
                         <p>Other Features <span className='descriptionCard'>{ other }</span></p>
                     </div>
                     <div className='cardImageContainer'>
-                        <img className='imageCard' src={imageUrl} alt="Image not found" />
+                        <img 
+                            className='imageCard'
+                            src={imageUrl}
+                            onError={({ currentTarget }) => {
+                                currentTarget.onerror = null; // prevents looping
+                                currentTarget.src= notFound;
+                            }}
+                            alt="Image not found"
+                        />
                     </div>
                 </div>
                 <h2 className='priceCard'>{ price }</h2>

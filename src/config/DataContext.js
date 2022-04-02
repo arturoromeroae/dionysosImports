@@ -6,7 +6,8 @@ const ProductsContext = createContext();
 const DataContext = (props) => {
     const {
         data: allData, 
-        loading
+        loading,
+        dataLength
     } = getData()
     
     const [searchDataValue, setSearchDataValue] = useState('');
@@ -25,7 +26,8 @@ const DataContext = (props) => {
 
     return (
         <ProductsContext.Provider value={{
-            searchedData, 
+            searchedData,
+            dataLength,
             loading,
             setSearchDataValue
         }}>

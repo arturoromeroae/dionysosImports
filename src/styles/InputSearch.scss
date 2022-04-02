@@ -3,7 +3,6 @@
 .searchContainer{
     display: flex;
     justify-content: center;
-    margin-block: 20px;
 }
 
 .searchInput{
@@ -12,6 +11,7 @@
     border-radius: 20px;
     background-color: vars.$beige;
     transition: all 0.5s;
+    height: 21px;
 }
 
 .searchInput:hover{
