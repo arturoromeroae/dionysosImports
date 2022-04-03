@@ -56,7 +56,7 @@ const Products = (props) => {
                   <CardProducts
                     loading={props.loading}
                     key={resp.prodCode}
-                    imageUrl={resp.imagen} 
+                    imageUrl="https://iacymmovil.solarc.pe/wwwroot/images/00052.jpg"
                     title={resp.prodName}
                     country={resp.country}
                     region={resp.region}

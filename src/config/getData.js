@@ -20,7 +20,6 @@ const getData = (props) => {
   });
 
   useEffect(() => {
-    setTimeout(() => {
     var requestOptions = {
       method: 'POST',
       headers: myHeaders,
@@ -37,7 +36,7 @@ const getData = (props) => {
       }
     )
     .catch(error => console.log('error', error));
-  }, 3000)})
+  })
 
   return { data, dataLength, loading };
 };
