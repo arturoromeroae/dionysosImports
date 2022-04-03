@@ -8,6 +8,15 @@
     margin-bottom: 50px;
 }
 
+.productsListContainerLoading{
+    width: 75%;
+    display: flex;
+    flex-wrap:wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: -10;
+}
+
 .productsFilterContainer{
     width: 25%;
 }
@@ -31,9 +40,4 @@
 .buttonLoadMore button:hover{
     background-color: rgba(120, 7, 37, 1);
     transition: linear 0.3s;
-}
-
-.loadingProductsContainer{
-    width: 100%;
-    margin-top: 15%;
 }

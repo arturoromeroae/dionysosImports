@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react';
 
 const API = process.env.API;
 
-const getData = (props) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [dataLength, setDataLength] = useState(0);
+const getDataFood = (props) => {
+  const [dataFood, setDataFood] = useState([]);
+  const [loadingFood, setLoadingFood] = useState(true);
+  const [dataFoodLength, setDataFoodLength] = useState(0);
 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "prodclass": 4,
+    "prodclass": 3,
     "country": 0,
     "prodType": 0,
     "prodVariety": 0,
@@ -30,15 +30,15 @@ const getData = (props) => {
     fetch(API, requestOptions)
     .then(response => response.json())
     .then(result => {
-        setData(result);
-        setDataLength(result.data.length)
-        setLoading(false);
+        setDataFood(result);
+        setDataFoodLength(result.data.length)
+        setLoadingFood(false);
       }
     )
     .catch(error => console.log('error', error));
   })
 
-  return { data, dataLength, loading };
+  return { dataFood, dataFoodLength, loadingFood };
 };
 
-export { getData };
+export { getDataFood };
