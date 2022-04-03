@@ -20,25 +20,22 @@ const getDataWine = (props) => {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-      };
-      
-      fetch(API, requestOptions)
-      .then(response => response.json())
-      .then(result => {
-          setDataWine(result);
-          setDataWineLength(result.data.length)
-          setWineLoading(false);
-        }
-      )
-      .catch(error => console.log('error', error));
-      
-    }, 8000);
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch(API, requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        setDataWine(result);
+        setDataWineLength(result.data.length)
+        setWineLoading(false);
+      }
+    )
+    .catch(error => console.log('error', error));
   })
 
   return { dataWine, dataWineLength, loadingWine };
