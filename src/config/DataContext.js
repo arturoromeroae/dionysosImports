@@ -39,12 +39,30 @@ const DataContext = (props) => {
 
     if (searchDataValue.length <= 1) {
         searchedDataWine = allDataWine.data;
-        searchedDataLiquor = allDataLiquor;
-        searchedDataBeer = allDataBeer;
-        searchedDataFood = allDataFood;
+        searchedDataLiquor = allDataLiquor.data;
+        searchedDataBeer = allDataBeer.data;
+        searchedDataFood = allDataFood.data;
         
     }else{
         searchedDataWine = allDataWine.data.filter(data => {
+            const dataContent = data.filtro.toLowerCase();
+            const searchContent = searchDataValue.toLowerCase();
+            return dataContent.includes(searchContent);
+        })
+
+        searchedDataLiquor = allDataLiquor.data.filter(data => {
+            const dataContent = data.filtro.toLowerCase();
+            const searchContent = searchDataValue.toLowerCase();
+            return dataContent.includes(searchContent);
+        })
+
+        searchedDataBeer = allDataBeer.data.filter(data => {
+            const dataContent = data.filtro.toLowerCase();
+            const searchContent = searchDataValue.toLowerCase();
+            return dataContent.includes(searchContent);
+        })
+
+        searchedDataFood = allDataFood.data.filter(data => {
             const dataContent = data.filtro.toLowerCase();
             const searchContent = searchDataValue.toLowerCase();
             return dataContent.includes(searchContent);

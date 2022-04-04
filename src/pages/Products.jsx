@@ -36,9 +36,9 @@ const Products = () => {
   const [limitBeer, setLimitBeer] = useState(12);
   const [limitFood, setLimitFood] = useState(12);
   const winesInfo = searchedDataWine;
-  const liquorInfo = searchedDataLiquor.data;
-  const beerInfo = searchedDataBeer.data;
-  const foodInfo = searchedDataFood.data;
+  const liquorInfo = searchedDataLiquor;
+  const beerInfo = searchedDataBeer;
+  const foodInfo = searchedDataFood;
   const n = 3;
 
   const increaseLimitWine = () => {
@@ -102,7 +102,7 @@ const Products = () => {
                 ))
               }
             </div>
-            {!loadingWine &&
+            {!loadingWine && limitWine < searchedDataWine.length &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitWine}>Load More</button>
               </div>
@@ -110,7 +110,7 @@ const Products = () => {
           </TabPanel>
           <TabPanel value={1}>
             <div className='productsFilterContainer'>
-              <Filters filterTitle='Liquor Filter'>
+              <Filters filterTitle='Liquor Filter' count={!loadingLiquor && searchedDataLiquor.length}>
                   <Select label='Country' />
                   <Select label='Region' />
                   <Select label='Producer' />
@@ -147,7 +147,7 @@ const Products = () => {
                 ))
               }
             </div>
-            {!loadingLiquor &&
+            {!loadingLiquor && limitLiquor < searchedDataLiquor.length &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitLiquor}>Load More</button>
               </div>
@@ -155,7 +155,7 @@ const Products = () => {
           </TabPanel>
           <TabPanel value={2}>
             <div className='productsFilterContainer'>
-              <Filters filterTitle='Beer Filter'>
+              <Filters filterTitle='Beer Filter' count={!loadingBeer && searchedDataBeer.length}>
                   <Select label='Country' />
                   <Select label='Region' />
                   <Select label='Producer' />
@@ -192,7 +192,7 @@ const Products = () => {
                 ))
               }
             </div>
-            {!loadingBeer &&
+            {!loadingBeer && limitBeer < searchedDataBeer.length &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitBeer}>Load More</button>
               </div>
@@ -200,7 +200,7 @@ const Products = () => {
           </TabPanel>
           <TabPanel value={3}>
             <div className='productsFilterContainer'>
-              <Filters filterTitle='Food Filter'>
+              <Filters filterTitle='Food Filter' count={!loadingFood && searchedDataFood.length}>
                   <Select label='Country' />
                   <Select label='Region' />
                   <Select label='Producer' />
@@ -237,7 +237,7 @@ const Products = () => {
                 ))
               }
             </div>
-            {!loadingFood &&
+            {!loadingFood && limitFood < searchedDataFood.length &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitFood}>Load More</button>
               </div>
