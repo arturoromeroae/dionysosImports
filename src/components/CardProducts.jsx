@@ -19,9 +19,6 @@ const CardProducts = ({ imageUrl,
                         price, 
                         content 
                     }) => {
-    const [imageSrc, setImageSrc] = useState(notFound);
-    const [loadingimage, setLoadingImage] = useState(true);
-    useEffect(() => (setImageSrc(imageUrl), setLoadingImage(false)), [imageUrl]);
 
     return (
         <div className='cardContainer'>
@@ -43,22 +40,15 @@ const CardProducts = ({ imageUrl,
                         <p>Other Features <span className='descriptionCard'>{ other }</span></p>
                     </div>
                     <div className='cardImageContainer'>
-                        {loadingimage && 
-                            <Box sx={{ display: 'flex' }}>
-                                <CircularProgress />
-                            </Box>
-                        }
-                        {!loadingimage &&
-                            <img
-                                className='imageCard'
-                                src={imageSrc}
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null; // prevents looping
-                                    currentTarget.src= notFound;
-                                }}
-                                alt="Image not found"
-                            />
-                        }
+                        <img
+                            className='imageCard'
+                            src={imageUrl}
+                            onError={({ currentTarget }) => {
+                                currentTarget.onerror = null; // prevents looping
+                                currentTarget.src= notFound;
+                            }}
+                            alt="Image not found"
+                        />
                     </div>
                 </div>
                 <h2 className='priceCard'>{ price }</h2>

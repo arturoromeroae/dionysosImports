@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { getDataLiquor } from './getDataLiquor';
 import { getDataWine } from './getDataWine';
 import { getDataBeer } from './getDataBeer';
@@ -9,8 +9,7 @@ const ProductsContext = createContext();
 const DataContext = (props) => {
     const {
         dataWine: allDataWine,
-        loadingWine,
-        dataWineLength
+        loadingWine
     } = getDataWine()
 
     const {
@@ -38,14 +37,15 @@ const DataContext = (props) => {
     let searchedDataBeer = [];
     let searchedDataFood = [];
 
-    if (!searchDataValue.length >= 1) {
-        searchedDataWine = allDataWine;
+    if (searchDataValue.length <= 1) {
+        searchedDataWine = allDataWine.data;
         searchedDataLiquor = allDataLiquor;
         searchedDataBeer = allDataBeer;
         searchedDataFood = allDataFood;
+        
     }else{
-        searchedDataWine = allDataWine.filter(data => {
-            const dataContent = data.text.toLowerCase();
+        searchedDataWine = allDataWine.data.filter(data => {
+            const dataContent = data.filtro.toLowerCase();
             const searchContent = searchDataValue.toLowerCase();
             return dataContent.includes(searchContent);
         })
@@ -57,7 +57,6 @@ const DataContext = (props) => {
             searchedDataLiquor,
             searchedDataBeer,
             searchedDataFood,
-            dataWineLength,
             loadingWine,
             loadingLiquor,
             loadingBeer,

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import '@styles/ProductsPage.scss'
 import Header from '@components/Header';
 import Footer from '@components/Footer';
@@ -6,12 +6,12 @@ import Banner from '@components/Banner';
 import { styled } from '@mui/system';
 import bannerProducts from '@images/banner_products.jpg';
 import CardProducts from '@components/CardProducts';
-import beerImage from '@images/beer.jpg';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import TabsProductsCustom from '../components/TabsProductsCustom';
 import Filters from '@components/Filters';
 import Select from '@components/Select';
 import SkeletonCardLoading from '@components/SkeletonCardLoading';
+import { ProductsContext } from '@config/DataContext';
 
 const TabPanel = styled(TabPanelUnstyled)`
   width: 100%;
@@ -19,18 +19,28 @@ const TabPanel = styled(TabPanelUnstyled)`
   display: flex;
 `;
 
-const Products = (props) => {
+const Products = () => {
+  const {
+    searchedDataWine,
+    searchedDataLiquor,
+    searchedDataBeer,
+    searchedDataFood,
+    loadingWine,
+    loadingLiquor,
+    loadingBeer,
+    loadingFood,
+  } = useContext(ProductsContext)
+
   const [limitWine, setLimitWine] = useState(12);
   const [limitLiquor, setLimitLiquor] = useState(12);
   const [limitBeer, setLimitBeer] = useState(12);
   const [limitFood, setLimitFood] = useState(12);
-  const winesInfo = props.dataWine.data;
-  const liquorInfo = props.dataLiquor.data;
-  const beerInfo = props.dataBeer.data;
-  const foodInfo = props.dataFood.data;
-  const winesInfoLength = props.lengthData;
+  const winesInfo = searchedDataWine;
+  const liquorInfo = searchedDataLiquor.data;
+  const beerInfo = searchedDataBeer.data;
+  const foodInfo = searchedDataFood.data;
   const n = 3;
-  
+
   const increaseLimitWine = () => {
     setLimitWine(limitWine + 12);
   };
@@ -55,14 +65,14 @@ const Products = (props) => {
         <TabsProductsCustom>
           <TabPanel value={0}>
             <div className='productsFilterContainer'>
-              <Filters filterTitle='Wine Filter'>
+              <Filters filterTitle='Wine Filter' count={!loadingWine && searchedDataWine.length}>
                   <Select label='Country' />
                   <Select label='Region' />
                   <Select label='Producer' />
                   <Select label='Size' />
               </Filters>
             </div>
-            {props.loadingWine &&
+            {loadingWine &&
               [...Array(n)].map((e, i) => (
                 <div className='productsListContainerLoading'>
                   <SkeletonCardLoading />
@@ -75,7 +85,7 @@ const Products = (props) => {
               {
                 winesInfo && winesInfo.slice(0, limitWine).map(wine => (
                   <CardProducts
-                    loading={props.loadingWine}
+                    loading={loadingWine}
                     key={wine.prodCode}
                     imageUrl={wine.imagen} 
                     title={wine.prodName}
@@ -92,14 +102,14 @@ const Products = (props) => {
                 ))
               }
             </div>
-            {!props.loadingWine &&
+            {!loadingWine &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitWine}>Load More</button>
               </div>
             }
           </TabPanel>
           <TabPanel value={1}>
-          <div className='productsFilterContainer'>
+            <div className='productsFilterContainer'>
               <Filters filterTitle='Liquor Filter'>
                   <Select label='Country' />
                   <Select label='Region' />
@@ -107,7 +117,7 @@ const Products = (props) => {
                   <Select label='Size' />
               </Filters>
             </div>
-            {props.loadingLiquor &&
+            {loadingLiquor &&
               [...Array(n)].map((e, i) => (
                 <div className='productsListContainerLoading'>
                   <SkeletonCardLoading />
@@ -120,7 +130,7 @@ const Products = (props) => {
               {
                 liquorInfo && liquorInfo.slice(0, limitLiquor).map(liquor => (
                   <CardProducts
-                    loading={props.loadingLiquor}
+                    loading={loadingLiquor}
                     key={liquor.prodCode}
                     imageUrl={liquor.imagen} 
                     title={liquor.prodName}
@@ -137,14 +147,14 @@ const Products = (props) => {
                 ))
               }
             </div>
-            {!props.loadingLiquor &&
+            {!loadingLiquor &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitLiquor}>Load More</button>
               </div>
             }
           </TabPanel>
           <TabPanel value={2}>
-          <div className='productsFilterContainer'>
+            <div className='productsFilterContainer'>
               <Filters filterTitle='Beer Filter'>
                   <Select label='Country' />
                   <Select label='Region' />
@@ -152,7 +162,7 @@ const Products = (props) => {
                   <Select label='Size' />
               </Filters>
             </div>
-            {props.loadingBeer &&
+            {loadingBeer &&
               [...Array(n)].map((e, i) => (
                 <div className='productsListContainerLoading'>
                   <SkeletonCardLoading />
@@ -165,7 +175,7 @@ const Products = (props) => {
               {
                 beerInfo && beerInfo.slice(0, limitBeer).map(beer => (
                   <CardProducts
-                    loading={props.loadingBeer}
+                    loading={loadingBeer}
                     key={beer.prodCode}
                     imageUrl={beer.imagen} 
                     title={beer.prodName}
@@ -182,14 +192,14 @@ const Products = (props) => {
                 ))
               }
             </div>
-            {!props.loadingBeer &&
+            {!loadingBeer &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitBeer}>Load More</button>
               </div>
             }
           </TabPanel>
           <TabPanel value={3}>
-          <div className='productsFilterContainer'>
+            <div className='productsFilterContainer'>
               <Filters filterTitle='Food Filter'>
                   <Select label='Country' />
                   <Select label='Region' />
@@ -197,7 +207,7 @@ const Products = (props) => {
                   <Select label='Size' />
               </Filters>
             </div>
-            {props.loadingFood &&
+            {loadingFood &&
               [...Array(n)].map((e, i) => (
                 <div className='productsListContainerLoading'>
                   <SkeletonCardLoading />
@@ -210,7 +220,7 @@ const Products = (props) => {
               {
                 foodInfo && foodInfo.slice(0, limitFood).map(food => (
                   <CardProducts
-                    loading={props.loadingFood}
+                    loading={loadingFood}
                     key={food.prodCode}
                     imageUrl={food.imagen} 
                     title={food.prodName}
@@ -227,7 +237,7 @@ const Products = (props) => {
                 ))
               }
             </div>
-            {!props.loadingFood &&
+            {!loadingFood &&
               <div className='buttonLoadMore'>
                 <button onClick={increaseLimitFood}>Load More</button>
               </div>

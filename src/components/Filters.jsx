@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import '@styles/Filters.scss';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import { ProductsContext } from '@config/DataContext';
 
-const Filters = ({ children, filterTitle }) => {
+const Filters = ({ children, filterTitle, count }) => {
+    const { searchDataValue, setSearchDataValue } = useContext(ProductsContext);
+    const filterTodo = (e) => {
+        setSearchDataValue(e.target.value);
+    }
+
     return (
         <div className='ContainerFilterForm'>
             <div className='searchInput' component="form">
@@ -12,11 +18,14 @@ const Filters = ({ children, filterTitle }) => {
                     sx={{ ml: 1, flex: 1 }}
                     placeholder='Search'
                     inputProps={{ 'aria-label': 'search' }}
+                    value={searchDataValue}
+                    onChange={filterTodo}
                 />
                 <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
                     <SearchIcon />
                 </IconButton>
             </div>
+            <p className='productsCount'>Available Products: {count}</p>
             <h3 className='titleFilter'>{filterTitle}</h3>
             <form>
                 <div className='filterContainer'>

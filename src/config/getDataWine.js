@@ -31,14 +31,13 @@ const getDataWine = (props) => {
     .then(response => response.json())
     .then(result => {
         setDataWine(result);
-        setDataWineLength(result.data.length)
         setWineLoading(false);
       }
     )
     .catch(error => console.log('error', error));
   })
 
-  return { dataWine, dataWineLength, loadingWine };
+  return { dataWine, loadingWine };
 };
 
 export { getDataWine };

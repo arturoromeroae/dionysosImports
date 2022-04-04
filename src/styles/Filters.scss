@@ -6,7 +6,9 @@
 }
 
 .ContainerFilterForm .searchInput{
-    margin: 50px;
+    margin-top: 50px;
+    margin-inline: 50px;
+    margin-bottom: 10px;
     text-align: center;
     background-color: vars.$gray;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
@@ -57,4 +59,9 @@
 .resetButton:hover{
     background-color: vars.$beige;
     transition: all 0.3s;
+}
+
+.productsCount{
+    text-align: center;
+    padding: 20px;
 }
