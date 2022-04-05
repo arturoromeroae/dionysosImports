@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import { ProductsContext } from '@config/DataContext';
 
 const Tab = styled(TabUnstyled)`
     color: white;
@@ -53,18 +54,24 @@ const TabsList = styled(TabsListUnstyled)`
   z-index: 1;
 `;
 
-const TabsProductsCustom = ({loading, children}) => {
-    return (
-        <TabsUnstyled defaultValue={0}>
-            <TabsList>
-                <Tab>Wine</Tab>
-                <Tab>Liquor</Tab>
-                <Tab>Beer</Tab>
-                <Tab>Foods</Tab>
-            </TabsList>
-            {children}
-        </TabsUnstyled>
-    )
+const TabsProductsCustom = ({ children }) => {
+  const { searchDataValue, setSearchDataValue } = useContext(ProductsContext);
+
+  const resetSearch = (e) => {
+    setSearchDataValue('');
+  }
+
+  return (
+      <TabsUnstyled defaultValue={0}>
+          <TabsList>
+              <Tab onClick={resetSearch}>Wine</Tab>
+              <Tab onClick={resetSearch}>Liquor</Tab>
+              <Tab onClick={resetSearch}>Beer</Tab>
+              <Tab onClick={resetSearch}>Foods</Tab>
+          </TabsList>
+          {children}
+      </TabsUnstyled>
+  )
 }
 
 export default TabsProductsCustom;
