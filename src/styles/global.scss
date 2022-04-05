@@ -1,11 +1,28 @@
 @use 'vars';
 
+@font-face {
+    font-family: 'ABeeZee-Regular';
+    src: url("../assets/fonts/ABeeZee-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'ABeeZee-Italic';
+    src: url("../assets/fonts/ABeeZee-Italic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'AmstelvarAlpha Default';
+    font-style: normal;
+    font-weight: normal;
+    src: local('../assets/fonts/AmstelvarAlpha Default'), url('../assets/fonts/AmstelvarAlpha-Variations-noHVAR.woff') format('woff');
+}
+
 *{
     margin: 0;
 }
 
 body{
-    font-family: 'Playfair Display', serif;
+    font-family: 'AmstelvarAlpha Default', serif;
     height:100%;
 }
 

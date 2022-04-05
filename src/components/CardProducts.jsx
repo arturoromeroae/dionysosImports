@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 
 const CardProducts = ({ imageUrl,
                         title, 
+                        brand,
                         country, 
                         region, 
                         produced, 
@@ -30,6 +31,7 @@ const CardProducts = ({ imageUrl,
                 <div className='cardItemsContainer'>
                     <div className='cardContentContainer'>
                         <h3 className='titleCard'>{ title }</h3>
+                        <p>Brand <span className='descriptionCard'>{ brand }</span></p>
                         <p>Country <span className='descriptionCard'>{ country }</span></p>
                         <p>Region <span className='descriptionCard'>{ region }</span></p>
                         <p>Produced <span className='descriptionCard'>{ produced }</span></p>

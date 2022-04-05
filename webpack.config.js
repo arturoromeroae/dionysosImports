@@ -60,12 +60,11 @@ module.exports = {
 				type: 'asset/resource'
 			},
 			{
-				test: /\.(woff|woff2)$/,
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: {
 					loader: 'url-loader',
 					options: {
-						limit: 10000,
-						mimetype: "application/font-woff",
+						limit: 100000,
 						name: "[name].[contenthash].[ext]",
 						outputPath: "./assets/fonts/",
 						publicPath: "../assets/fonts/",

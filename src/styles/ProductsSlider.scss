@@ -1,5 +1,15 @@
 @use 'vars';
 
+@font-face {
+    font-family: 'ABeeZee-Regular';
+    src: url("../assets/fonts/ABeeZee-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'ABeeZee-Italic';
+    src: url("../assets/fonts/ABeeZee-Italic.otf") format("opentype");
+}
+
 .recomendationsContainer{
     background-image: url('@images/products_bg.jpg');
     height: 850px;
@@ -13,6 +23,7 @@
 }
 
 .titleRecomendations{
+    font-family: 'ABeeZee-Regular' !important;
     font-size: 20px;
     color: vars.$black;
     text-align: center;
@@ -134,6 +145,7 @@
 
     .titleRecomendations{
         font-size: 30px;
+        font-family: 'ABeeZee-Regular';
     }
 
     .arrowProductSlider{

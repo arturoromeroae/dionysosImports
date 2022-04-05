@@ -66,10 +66,11 @@ const Products = () => {
           <TabPanel value={0}>
             <div className='productsFilterContainer'>
               <Filters filterTitle='Wine Filter' count={!loadingWine && searchedDataWine.length}>
-                  <Select label='Country' />
-                  <Select label='Region' />
-                  <Select label='Producer' />
-                  <Select label='Size' />
+                  <Select label='Brand' brands={winesInfo} />
+                  <Select label='Country' countries={winesInfo} />
+                  <Select label='Producer' producers={winesInfo} />
+                  <Select label='Region' regions={winesInfo} />
+                  <Select label='Size' sizes={winesInfo} />
               </Filters>
             </div>
             {loadingWine &&
@@ -89,6 +90,7 @@ const Products = () => {
                     key={wine.prodCode}
                     imageUrl={wine.imagen} 
                     title={wine.prodName}
+                    brand={wine.brand}
                     country={wine.country}
                     region={wine.region}
                     Produced={wine.producer}
@@ -111,10 +113,11 @@ const Products = () => {
           <TabPanel value={1}>
             <div className='productsFilterContainer'>
               <Filters filterTitle='Liquor Filter' count={!loadingLiquor && searchedDataLiquor.length}>
-                  <Select label='Country' />
-                  <Select label='Region' />
-                  <Select label='Producer' />
-                  <Select label='Size' />
+                <Select label='Brand' brands={liquorInfo} />
+                <Select label='Country' countries={liquorInfo} />
+                <Select label='Producer' producers={liquorInfo} />
+                <Select label='Region' regions={liquorInfo} />
+                <Select label='Size' sizes={liquorInfo} />
               </Filters>
             </div>
             {loadingLiquor &&
@@ -134,6 +137,7 @@ const Products = () => {
                     key={liquor.prodCode}
                     imageUrl={liquor.imagen} 
                     title={liquor.prodName}
+                    brand={liquor.brand}
                     country={liquor.country}
                     region={liquor.region}
                     Produced={liquor.producer}
@@ -156,10 +160,11 @@ const Products = () => {
           <TabPanel value={2}>
             <div className='productsFilterContainer'>
               <Filters filterTitle='Beer Filter' count={!loadingBeer && searchedDataBeer.length}>
-                  <Select label='Country' />
-                  <Select label='Region' />
-                  <Select label='Producer' />
-                  <Select label='Size' />
+                <Select label='Brand' brands={beerInfo} />
+                <Select label='Country' countries={beerInfo} />
+                <Select label='Producer' producers={beerInfo} />
+                <Select label='Region' regions={beerInfo} />
+                <Select label='Size' sizes={beerInfo} />
               </Filters>
             </div>
             {loadingBeer &&
@@ -179,6 +184,7 @@ const Products = () => {
                     key={beer.prodCode}
                     imageUrl={beer.imagen} 
                     title={beer.prodName}
+                    brand={beer.brand}
                     country={beer.country}
                     region={beer.region}
                     Produced={beer.producer}
@@ -201,10 +207,11 @@ const Products = () => {
           <TabPanel value={3}>
             <div className='productsFilterContainer'>
               <Filters filterTitle='Food Filter' count={!loadingFood && searchedDataFood.length}>
-                  <Select label='Country' />
-                  <Select label='Region' />
-                  <Select label='Producer' />
-                  <Select label='Size' />
+                <Select label='Brand' brands={foodInfo} />
+                <Select label='Country' countries={foodInfo} />
+                <Select label='Producer' producers={foodInfo} />
+                <Select label='Region' regions={foodInfo} />
+                <Select label='Size' sizes={foodInfo} />
               </Filters>
             </div>
             {loadingFood &&
@@ -224,6 +231,7 @@ const Products = () => {
                     key={food.prodCode}
                     imageUrl={food.imagen} 
                     title={food.prodName}
+                    brand={food.brand}
                     country={food.country}
                     region={food.region}
                     Produced={food.producer}

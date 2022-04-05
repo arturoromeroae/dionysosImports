@@ -7,8 +7,14 @@ import { ProductsContext } from '@config/DataContext';
 
 const Filters = ({ children, filterTitle, count }) => {
     const { searchDataValue, setSearchDataValue } = useContext(ProductsContext);
+    
     const filterTodo = (e) => {
         setSearchDataValue(e.target.value);
+    }
+
+    const resetTodo = (e) => {
+        e.preventDefault();
+        setSearchDataValue('');
     }
 
     return (
@@ -32,8 +38,8 @@ const Filters = ({ children, filterTitle, count }) => {
                     {children}
                 </div>
                 <div className='buttonsContainer'>
-                    <button type='reset' className='resetButton'>Reset</button>
-                    <button className='filterButton'>Search</button>
+                    <button onClick={resetTodo} type='reset' className='resetButton'>Reset</button>
+                    <button type='submit' className='filterButton'>Search</button>
                 </div>
             </form>
         </div>
