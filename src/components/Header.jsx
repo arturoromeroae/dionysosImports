@@ -38,7 +38,7 @@ const Header = () => {
             <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Customer</Link>
           </li>
           <li>
-            <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Contact</Link>
+            <Link className={(location.pathname === '/contact') ? 'active linkItem' : 'linkItem'} to="/contact">Contact</Link>
           </li>
           {user && (
             <li>
@@ -50,7 +50,7 @@ const Header = () => {
             <li className='loginButtonList'>
                 <button className='logoutButton' onClick={handleLogout}>
                   <i className="fa-solid fa-right-from-bracket"></i>
-                  LOGOUT
+                  Logout
                 </button>
             </li>
           )}

@@ -8,8 +8,8 @@ const Button = ({ text, icon, url }) => {
   return (
     <div>
         <Link to={url} className={(location.pathname === '/login') ? 'activeButton ButtonSite' : 'ButtonSite'}>
-          <i className={ icon }></i>
           <span>{ text }</span>
+          <i className={ icon }></i>
         </Link>
     </div>
   )

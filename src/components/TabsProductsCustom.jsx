@@ -45,8 +45,9 @@ const TabsList = styled(TabsListUnstyled)`
   min-width: 320px;
   background-color: transparent;
   margin-bottom: 16px;
-  padding-top: 300px;
-  padding-left: 10%;
+  padding-top: 70px;
+  padding-left: 30%;
+  padding-bottom: 5%;
   display: flex;
   align-items: center;
   justify-content: left;

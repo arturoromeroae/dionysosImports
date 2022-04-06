@@ -35,6 +35,7 @@ nav{
     font-size: 14px;
     font-weight: 500;
     transition: all 0.3s;
+    padding-inline: 2px;
 }
 
 .linkItem:hover{
@@ -53,9 +54,8 @@ nav{
     border: 1px solid vars.$black;
     cursor: pointer;
     font-size: 15px;
-    padding: 8px;
+    padding: 4px;
     padding-inline: 25px;
-    margin-inline: 20px;
     font-weight: 800;
     transition: linear 0.2s;
     text-decoration: none;

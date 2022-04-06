@@ -6,6 +6,7 @@ import About from '@pages/About';
 import Admin from '@pages/Admin';
 import Customer from '@pages/Customer';
 import Products from '@pages/Products';
+import Contact from '@pages/Contact';
 import Login from '@pages/Login';
 import AuthProvider from '@context/authContext';
 import ProtectedRoute from '@components/ProtectedRoute';
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path='/about-us' element={<About />} />
           <Route exact path='/customer' element={<Customer />} />
           <Route exact path='/products' element={<Products />} />
+          <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/admin-panel' element={<ProtectedRoute />} />
         </Routes>

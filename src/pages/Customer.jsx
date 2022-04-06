@@ -25,12 +25,9 @@ const Customer = () => {
       <Header />
       <Banner srcBanner={bannerCustomer} title='Customer' />
       <div className='loginContainer'>
-        <div className='inputSearchCustomer'>
-          <InputSearch placeHolder="Search" />
-        </div>
         <div className='loginButtonCustomer'>
             {!user && (
-              <Button text='LOGIN' icon='fa-solid fa-unlock-keyhole' url='/login' />
+              <Button text='Login' icon='fa-solid fa-unlock-keyhole' url='/login' />
             )}
         </div>
       </div>

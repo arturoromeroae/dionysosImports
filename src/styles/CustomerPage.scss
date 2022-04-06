@@ -3,16 +3,27 @@
 .containerCustomer{
     display: flex;
     margin: 20px;
+    z-index: 10;
+    margin-top: 100px;
 }
 
 .loginContainer{
     display: flex;
-    align-items: center;
     width: 100%;
 }
 
 .loginButtonCustomer{
     width: 20%;
+    margin-top: 85px;
+    margin-left: 25%;
+    z-index: 10;
+}
+
+.loginButtonCustomer button{
+    width: 20%;
+    margin-top: 170px;
+    z-index: 10;
+    background-color: vars.$white;
 }
 
 .inputSearchCustomer{
