@@ -24,9 +24,9 @@ const CardProducts = ({ imageUrl,
                         <p>Region <span className='descriptionCard'>{ region }</span></p>
                         <p>Size <span className='descriptionCard'>{ size }</span></p>
                         <p>Type <span className='descriptionCard'>{ type }</span></p>
-                        <p>Practices <span className='descriptionCard'></span></p>
                         <p>Variety <span className='descriptionCard'>{ variety }</span></p>
                         <p>Rating <span className='descriptionCard'>{ rating }</span></p>
+                        <p>Practices <span className='descriptionCard'></span></p>
                     </div>
                     <div className='cardImageContainer'>
                         <img
