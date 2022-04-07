@@ -3,7 +3,6 @@
 .socialButton{
     display: flex;
     margin-inline: 5px;
-    background-color: vars.$beige;
     padding: 7px;
     border-radius: 30px;
     align-items: center;
@@ -12,7 +11,7 @@
 }
 
 .socialButton:hover{
-    background-color: vars.$wine;
+    background-color: black;
     cursor: pointer;
     color: white;
     transition: linear 0.2s;

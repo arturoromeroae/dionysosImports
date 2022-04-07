@@ -16,6 +16,7 @@ const getDataBeer = (props) => {
     "prodType": 0,
     "prodVariety": 0,
     "producer": 0,
+    "prodBrand": 0,
     "region": "string"
   });
 

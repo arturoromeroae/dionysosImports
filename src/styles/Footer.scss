@@ -70,6 +70,10 @@ footer{
     text-decoration: underline;
 }
 
+.address a{
+    color: white;
+}
+
 @media only screen and (min-width: 1030px) and (max-width: 1600px) {
     .MenuFooter li{
         padding-inline: 20px;

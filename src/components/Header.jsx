@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '@styles/Header.scss';
-import banner from '@images/logo_white 1.png';
+import banner from '@images/dionysos-logo.png';
 import { Link, useLocation } from "react-router-dom";
 import InputSearch from './InputSearch';
 import { useAuth } from '@context/authContext';
+import SocialButton from '@components/SocialButton';
 
 const Header = () => {
   const [showText, setShowText] = useState('hidden');
@@ -46,6 +47,11 @@ const Header = () => {
             </li>
           )}
           <li className='menuListSearch'><InputSearch placeHolder="Search" /></li>
+          <li className='menuListSocial'>
+            <SocialButton icon={'fa-brands fa-facebook fa-1x'} />
+            <SocialButton icon={'fa-brands fa-instagram fa-1x'} />
+            <SocialButton icon={'fa-brands fa-twitter fa-1x'} />
+          </li>
           {user && (
             <li className='loginButtonList'>
                 <button className='logoutButton' onClick={handleLogout}>

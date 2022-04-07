@@ -20,7 +20,8 @@ const Tab = styled(TabUnstyled)`
     z-index: 1;
 
   &:hover {
-    background-color: #780725;
+    background-color: white;
+    color: black
   }
 
   &:focus {
@@ -44,10 +45,10 @@ const Tab = styled(TabUnstyled)`
 const TabsList = styled(TabsListUnstyled)`
   min-width: 320px;
   background-color: transparent;
-  margin-bottom: 16px;
-  padding-top: 70px;
+  margin-bottom: 0px;
+  padding-top: 170px;
   padding-left: 30%;
-  padding-bottom: 5%;
+  padding-bottom: 1%;
   display: flex;
   align-items: center;
   justify-content: left;

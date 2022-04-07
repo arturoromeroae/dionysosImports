@@ -5,9 +5,7 @@
 }
 
 .itemsFilter label{
-    font-family: 'Montserrat', serif;
     font-weight: 400;
-    color: vars.$red;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -23,11 +21,8 @@
     padding: 5px;
     margin-top: 5px;
     border: 0;
-    background-color: vars.$gray;
-    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -37,11 +32,11 @@
 }
 
 .itemsFilter select:hover{
-    background-color: vars.$beige;
     transition: all 0.3s;
 }
 
-.itemsFilter select:focus{
-    color: vars.$wine;
-    background-color: vars.$beige;
+.filterButton:hover{
+    background-color: black;
+    color: white;
 }
+

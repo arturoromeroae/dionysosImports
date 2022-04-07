@@ -1,10 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import '@styles/ProductsPage.scss'
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import Banner from '@components/Banner';
 import { styled } from '@mui/system';
-import bannerProducts from '@images/banner_products.jpg';
+import bannerProducts from '@images/Banner.jpg';
 import CardProducts from '@components/CardProducts';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import TabsProductsCustom from '../components/TabsProductsCustom';
@@ -60,7 +60,7 @@ const Products = () => {
   return (
     <>
       <Header />
-      <Banner srcBanner={bannerProducts} title='Products' />
+      <Banner srcBanner={bannerProducts} title='Products' page='Products' />
       <>
         <TabsProductsCustom>
           <TabPanel value={0}>
@@ -93,13 +93,10 @@ const Products = () => {
                     brand={wine.brand}
                     country={wine.country}
                     region={wine.region}
-                    Produced={wine.producer}
                     size={wine.size}
-                    style='Style'
-                    practices='Practices'
-                    grapes='Grapes'
-                    other='Other Features'
-                    price='$000,000'
+                    type={wine.prodType}
+                    variety={wine.variety}
+                    rating={wine.rating}
                   />
                 ))
               }
@@ -140,13 +137,10 @@ const Products = () => {
                     brand={liquor.brand}
                     country={liquor.country}
                     region={liquor.region}
-                    Produced={liquor.producer}
                     size={liquor.size}
-                    style='Style'
-                    practices='Practices'
-                    grapes='Grapes'
-                    other='Other Features'
-                    price='$000,000'
+                    type={liquor.prodType}
+                    variety={liquor.variety}
+                    rating={liquor.rating}
                   />
                 ))
               }
@@ -187,13 +181,10 @@ const Products = () => {
                     brand={beer.brand}
                     country={beer.country}
                     region={beer.region}
-                    Produced={beer.producer}
                     size={beer.size}
-                    style='Style'
-                    practices='Practices'
-                    grapes='Grapes'
-                    other='Other Features'
-                    price='$000,000'
+                    type={beer.prodType}
+                    variety={beer.variety}
+                    rating={beer.rating}
                   />
                 ))
               }
@@ -234,13 +225,10 @@ const Products = () => {
                     brand={food.brand}
                     country={food.country}
                     region={food.region}
-                    Produced={food.producer}
                     size={food.size}
-                    style='Style'
-                    practices='Practices'
-                    grapes='Grapes'
-                    other='Other Features'
-                    price='$000,000'
+                    type={food.prodType}
+                    variety={food.variety}
+                    rating={food.rating}
                   />
                 ))
               }

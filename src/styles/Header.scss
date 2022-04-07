@@ -5,7 +5,7 @@ nav{
     position: fixed;
     width: 100%;
     z-index: 100;
-    background-color: rgba(120, 7, 37, 0.75);
+    background-color: white;
 }
 
 .menuContainer{
@@ -31,7 +31,7 @@ nav{
 
 .linkItem{
     text-decoration: none;
-    color: vars.$white;
+    color: black;
     font-size: 14px;
     font-weight: 500;
     transition: all 0.3s;
@@ -44,7 +44,7 @@ nav{
 }
 
 .active{
-    color: vars.$white;
+    color: black;
     font-weight: 800;
 }
 
@@ -82,11 +82,15 @@ nav{
 }
 
 .menuListLogo{
-    margin-right: -100px;
+    margin-right: -90px;
+}
+
+.menuListSocial{
+    display: flex;
 }
 
 .logoMenu{
-    width: 30%;
+    width: 55%;
     padding-top: 5px;
 }
 

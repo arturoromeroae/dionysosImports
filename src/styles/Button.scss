@@ -1,12 +1,6 @@
 @use 'vars';
 
-@font-face {
-    font-family: 'ABeeZee-Regular';
-    src: url("@fonts/ABeeZee-Regular.otf") format("opentype");
-}
-
 .ButtonSite{
-    font-family: 'ABeeZee-Regular';
     border-radius: 10px;
     background-color: vars.$white;
     border: 1px solid vars.$black;

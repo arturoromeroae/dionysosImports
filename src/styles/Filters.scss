@@ -10,14 +10,10 @@
     margin-inline: 50px;
     margin-bottom: 10px;
     text-align: center;
-    background-color: vars.$gray;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .titleFilter{
-    font-family: 'Montserrat', serif;
     text-align: center;
-    color: vars.$red;
     font-size: 30px;
     font-weight: 400;
     padding-inline: 20px;
@@ -31,7 +27,6 @@
 }
 
 .buttonsContainer button{
-    margin-inline: 5px;
     border-radius: 20px;
     padding: 10px 25px;
     border: 0;
@@ -39,14 +34,11 @@
 }
 
 .filterButton{
-    background-color: vars.$wine;
-    color: vars.$white;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .filterButton:hover{
-    background-color: vars.$wine-light;
     transition: all 0.3s;
 }
 

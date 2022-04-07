@@ -1,45 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '@styles/CardProducts.scss';
 import notFound from '@images/wine_not_found.png';
-import cart from '@images/cart.svg';
-import RatingStar from '@components/RatingStar';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
 
 const CardProducts = ({ imageUrl,
                         title, 
                         brand,
                         country, 
                         region, 
-                        produced, 
                         size, 
-                        style, 
-                        practices, 
-                        grapes, 
-                        other,
-                        price, 
-                        content 
+                        type,
+                        variety, 
+                        rating 
                     }) => {
 
     return (
         <div className='cardContainer'>
             <div>
-                <div>
-                    <RatingStar />
-                    <img className='cartIcon' src={cart} />
-                </div>
                 <div className='cardItemsContainer'>
                     <div className='cardContentContainer'>
                         <h3 className='titleCard'>{ title }</h3>
                         <p>Brand <span className='descriptionCard'>{ brand }</span></p>
                         <p>Country <span className='descriptionCard'>{ country }</span></p>
                         <p>Region <span className='descriptionCard'>{ region }</span></p>
-                        <p>Produced <span className='descriptionCard'>{ produced }</span></p>
                         <p>Size <span className='descriptionCard'>{ size }</span></p>
-                        <p>Style <span className='descriptionCard'>{ style }</span></p>
-                        <p>Practices <span className='descriptionCard'>{ practices }</span></p>
-                        <p>Grapes <span className='descriptionCard'>{ grapes }</span></p>
-                        <p>Other Features <span className='descriptionCard'>{ other }</span></p>
+                        <p>Type <span className='descriptionCard'>{ type }</span></p>
+                        <p>Practices <span className='descriptionCard'></span></p>
+                        <p>Variety <span className='descriptionCard'>{ variety }</span></p>
+                        <p>Rating <span className='descriptionCard'>{ rating }</span></p>
                     </div>
                     <div className='cardImageContainer'>
                         <img
@@ -53,7 +40,6 @@ const CardProducts = ({ imageUrl,
                         />
                     </div>
                 </div>
-                <h2 className='priceCard'>{ price }</h2>
             </div>
         </div>
     )

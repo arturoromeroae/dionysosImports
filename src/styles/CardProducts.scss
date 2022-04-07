@@ -25,7 +25,6 @@
 }
 
 .titleCard{
-    font-family: 'Montserrat', serif;
     font-weight: 400;
     font-size: 15px !important;
 }
@@ -37,31 +36,16 @@
 
 .cardContentContainer h3{
     font-size: 16px;
-    color: vars.$wine;
+    font-weight: bold;
     padding-bottom: 10px;
 }
 
 .cardContentContainer p{
     font-size: 12px;
-    color: vars.$wine;
+    font-weight: bold;
 }
 
 .descriptionCard{
-    font-family: 'Montserrat', serif;
-    color: vars.$black;
-    bottom: 0;
-}
-
-.priceCard{
-    font-family: 'Montserrat', serif;
-    margin: 15px;
-    font-size: 20px;
     font-weight: 400;
-    color: rgba(34, 137, 194, 0.95);
-    line-height: 13px;
-}
-
-.cartIcon{
-    float: right;
-    padding: 10px;
+    bottom: 0;
 }
