@@ -4,7 +4,7 @@ import Footer from '@components/Footer';
 import Banner from '@components/Banner';
 import Filters from '@components/Filters';
 import InputSearch from '@components/InputSearch';
-import bannerCustomer from '@images/banner_customer.jpg';
+import bannerCustomer from '@images/Banner.jpg';
 import CardProducts from '@components/CardProducts';
 import distinctiveImage from '@images/distinctive.jpg';
 import Divider from '@mui/material/Divider';
@@ -23,7 +23,7 @@ const Customer = () => {
   return (
     <>
       <Header />
-      <Banner srcBanner={bannerCustomer} title='Customer' />
+      <Banner srcBanner={bannerCustomer} title='Customers' page='Customers' />
       <div className='loginContainer'>
         <div className='loginButtonCustomer'>
             {!user && (
