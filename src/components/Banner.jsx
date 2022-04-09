@@ -1,7 +1,7 @@
 import React from 'react';
 import '@styles/Banner.scss';
 
-const Banner = ({ srcBanner, title, page }) => {
+const Banner = ({ srcBanner, title }) => {
   return (
     <section className='bannerTemplates'>
       <img className='BannerPage' src={srcBanner} alt='' />
@@ -10,7 +10,7 @@ const Banner = ({ srcBanner, title, page }) => {
         <ul className='listBc'>
             <li><a href='/'>Home</a></li>
             <li className='separatorBc'>-</li>
-            <li>{page}</li>
+            <li>{title}</li>
         </ul>
       </div>
     </section>

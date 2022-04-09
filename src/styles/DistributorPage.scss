@@ -1,0 +1,16 @@
+@use 'vars';
+
+.distributorsContainer{
+    padding-top: 240px;
+}
+
+.distributorListContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.items:nth-child(2n) {
+    flex-basis: 100%;
+}

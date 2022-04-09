@@ -11,7 +11,7 @@ const About = () => {
   return (
     <>
       <Header />
-      <Banner srcBanner={imageAbout} title='About Us' page='About Us' />
+      <Banner srcBanner={imageAbout} title='About Us' />
       <div className='aboutTextContainer'>
         <Text>
           <p><strong>Dionysos Imports</strong> was established in 1991 by Yannis Tsapos. Initially, we imported and distributed wines and beers from Greece and Cyprus. In 1992, we expanded our operations to include wines from Italy, as well as from Virginia and California. In 1993 and 1994, further expansion included wines from France and Portugal.</p>

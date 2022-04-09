@@ -1,0 +1,13 @@
+@use 'vars';
+
+.cardIconContainer{
+    border: 0;
+    margin: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px 0px vars.$dark-gray;
+}

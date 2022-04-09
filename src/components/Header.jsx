@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import '@styles/Header.scss';
 import banner from '@images/dionysos-logo.png';
+import logoSeven from '@images/logo-seven.png';
 import { Link, useLocation } from "react-router-dom";
 import InputSearch from './InputSearch';
 import { useAuth } from '@context/authContext';
 import SocialButton from '@components/SocialButton';
+import SocialCustomButton from '@components/SocialCustomButton';
 
 const Header = () => {
   const [showText, setShowText] = useState('hidden');
@@ -39,6 +41,9 @@ const Header = () => {
             <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Customer</Link>
           </li>
           <li>
+            <Link className={(location.pathname === '/distributors') ? 'active linkItem' : 'linkItem'} to="/distributors">Distributors</Link>
+          </li>
+          <li>
             <Link className={(location.pathname === '/contact') ? 'active linkItem' : 'linkItem'} to="/contact">Contact</Link>
           </li>
           {user && (
@@ -51,6 +56,7 @@ const Header = () => {
             <SocialButton icon={'fa-brands fa-facebook fa-1x'} />
             <SocialButton icon={'fa-brands fa-instagram fa-1x'} />
             <SocialButton icon={'fa-brands fa-twitter fa-1x'} />
+            <SocialCustomButton src={logoSeven} />
           </li>
           {user && (
             <li className='loginButtonList'>

@@ -23,7 +23,7 @@ const Customer = () => {
   return (
     <>
       <Header />
-      <Banner srcBanner={bannerCustomer} title='Customers' page='Customers' />
+      <Banner srcBanner={bannerCustomer} title='Customers' />
       <div className='loginContainer'>
         <div className='loginButtonCustomer'>
             {!user && (

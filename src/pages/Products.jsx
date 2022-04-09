@@ -7,7 +7,7 @@ import { styled } from '@mui/system';
 import bannerProducts from '@images/Banner.jpg';
 import CardProducts from '@components/CardProducts';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import TabsProductsCustom from '../components/TabsProductsCustom';
+import TabsProductsCustom from '@components/TabsProductsCustom';
 import Filters from '@components/Filters';
 import Select from '@components/Select';
 import SkeletonCardLoading from '@components/SkeletonCardLoading';
@@ -60,7 +60,7 @@ const Products = () => {
   return (
     <>
       <Header />
-      <Banner srcBanner={bannerProducts} title='Products' page='Products' />
+      <Banner srcBanner={bannerProducts} title='Products' />
       <>
         <TabsProductsCustom>
           <TabPanel value={0}>
