@@ -2,15 +2,12 @@
 
 .distributorsContainer{
     padding-top: 240px;
+    padding-bottom: 50px;
+    padding-inline: 200px;
 }
 
 .distributorListContainer{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-}
-
-.items:nth-child(2n) {
-    flex-basis: 100%;
+    justify-content: center;
 }

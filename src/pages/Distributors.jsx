@@ -68,6 +68,33 @@ const Distributors = () => {
                         <p><strong>Distribution in South Carolina</strong></p>
                     </div>
                 </CardIcon>
+                <CardIcon className="items">
+                    <div>
+                        <p><strong>Nestor Imports Inc.</strong></p>
+                        <p>8403 7th Avenue</p>
+                        <p>Brooklyn, New York, 11228</p>
+                        <p><a href="tel:718-836-1133">Tel: (718) 836-1133</a></p>
+                        <p><strong>Distribution in New York</strong></p>
+                    </div>
+                </CardIcon>
+                <CardIcon className="items">
+                    <div>
+                        <p><strong>Pompia, Inc.</strong></p>
+                        <p>1914 Tigertail Blvd</p>
+                        <p>Dania Beach, FL 33004</p>
+                        <p><a href="tel:781-350-0033">Tel: (781) 350-0033</a></p>
+                        <p><strong>Distribution in Florida</strong></p>
+                    </div>
+                </CardIcon>
+                <CardIcon className="items">
+                    <div>
+                        <p><strong>Bacchus Distributor</strong></p>
+                        <p>774-A Brogdon Road</p>
+                        <p>Suwanee, GA 30024</p>
+                        <p><a href="tel:770-714-8836">Tel: (770) 714-8836</a></p>
+                        <p><strong>Distribution in Georgia</strong></p>
+                    </div>
+                </CardIcon>
             </div>
         </div>
         <Footer />
