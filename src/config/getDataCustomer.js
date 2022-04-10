@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 
-const API = process.env.API_PRODUCTS;
+const API_CUSTOMER = process.env.API_CUSTOMER;
 
-const getDataLiquor = (props) => {
-  const [dataLiquor, setDataLiquor] = useState([]);
-  const [loadingLiquor, setLoadingLiquor] = useState(true);
-  const [dataLiquorLength, setDataLiquorLength] = useState(0);
+const getDataCustomer = (props) => {
+  const [dataFood, setDataFood] = useState([]);
+  const [loadingFood, setLoadingFood] = useState(true);
+  const [dataFoodLength, setDataFoodLength] = useState(0);
 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "prodclass": 1,
+    "prodclass": 3,
     "country": 0,
     "prodType": 0,
     "prodVariety": 0,
@@ -31,15 +31,15 @@ const getDataLiquor = (props) => {
     fetch(API, requestOptions)
     .then(response => response.json())
     .then(result => {
-        setDataLiquor(result);
-        setDataLiquorLength(result.data.length)
-        setLoadingLiquor(false);
+        setDataFood(result);
+        setDataFoodLength(result.data.length)
+        setLoadingFood(false);
       }
     )
     .catch(error => console.log('error', error));
   })
 
-  return { dataLiquor, dataLiquorLength, loadingLiquor };
+  return { dataFood, dataFoodLength, loadingFood };
 };
 
-export { getDataLiquor };
+export { getDataCustomer };

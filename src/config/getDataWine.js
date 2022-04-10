@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API = process.env.API;
+const API = process.env.API_PRODUCTS;
 
 const getDataWine = (props) => {
   const [dataWine, setDataWine] = useState([]);
