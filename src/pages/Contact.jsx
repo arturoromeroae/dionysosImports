@@ -18,7 +18,7 @@ const Contact = () => {
                     <h2>Dionysos Imports, Inc.</h2>
                     <p>11581 Robertson Dr,</p>
                     <p>Manassas, VA 20109</p>
-                    <p><strong>Tel:</strong> (703) 392-7073</p>
+                    <p><strong>Tel:</strong> <a href='tel:703-392-7073'>(703) 392-7073</a></p>
                     <p><strong>Fax:</strong> (703) 392-7075</p>
                 </div>
             </div>
@@ -80,13 +80,13 @@ const Contact = () => {
             </div>
             <div className='contactEmployees'>
                 <div>
-                    <h3>Northern Virginia, Washington DC, Maryland</h3>
+                    <h3>Northern Virginia, Washington DC, <br />Maryland</h3>
                     <p>Catherine Kaylor</p>
                     <p><a href='tel:571-437-4490'>(571) 437-4490</a></p>
                     <p>catherine.kaylor@dionysosimports.com</p>
                 </div>
                 <div>
-                    <h3>Richmond, Fredericksburg, Charlottesville</h3>
+                    <h3>Richmond, Fredericksburg, <br />Charlottesville</h3>
                     <p>Clinton Emerson</p>
                     <p><a href="tel:804-304-6231">(804) 304-6231</a></p>
                     <p>clinton.emerson@dionysosimports.com</p>
@@ -114,7 +114,7 @@ const Contact = () => {
                     <p>fernando.leonzo@dionysosimports.com</p>
                 </div>
                 <div>
-                    <h3>Richmond, Charlottesville, VA Beach, Norfolk, Williamsburg</h3>
+                    <h3>Richmond, Charlottesville, VA Beach, <br />Norfolk, Williamsburg</h3>
                     <p>Genevelyn Steele</p>
                     <p><a href="tel:804-426-8089">(804) 426-8089</a></p>
                     <p>genevelyn.steele@dionysosimports.com</p>
