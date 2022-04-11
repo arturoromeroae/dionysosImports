@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const API = process.env.API_PRODUCTS;
+const API_PRODUCTS = process.env.API_PRODUCTS;
 
-const getDataLiquor = (props) => {
+const getDataLiquor = () => {
   const [dataLiquor, setDataLiquor] = useState([]);
   const [loadingLiquor, setLoadingLiquor] = useState(true);
   const [dataLiquorLength, setDataLiquorLength] = useState(0);
@@ -28,7 +28,7 @@ const getDataLiquor = (props) => {
       redirect: 'follow'
     };
     
-    fetch(API, requestOptions)
+    fetch(API_PRODUCTS, requestOptions)
     .then(response => response.json())
     .then(result => {
         setDataLiquor(result);

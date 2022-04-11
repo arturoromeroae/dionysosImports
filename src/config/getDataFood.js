@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const API = process.env.API_PRODUCTS;
+const API_PRODUCTS = process.env.API_PRODUCTS;
 
-const getDataFood = (props) => {
+const getDataFood = () => {
   const [dataFood, setDataFood] = useState([]);
   const [loadingFood, setLoadingFood] = useState(true);
   const [dataFoodLength, setDataFoodLength] = useState(0);
@@ -28,7 +28,7 @@ const getDataFood = (props) => {
       redirect: 'follow'
     };
     
-    fetch(API, requestOptions)
+    fetch(API_PRODUCTS, requestOptions)
     .then(response => response.json())
     .then(result => {
         setDataFood(result);

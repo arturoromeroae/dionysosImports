@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const API = process.env.API_PRODUCTS;
+const API_PRODUCTS = process.env.API_PRODUCTS;
 
-const getDataWine = (props) => {
+const getDataWine = () => {
   const [dataWine, setDataWine] = useState([]);
   const [loadingWine, setWineLoading] = useState(true);
   const [dataWineLength, setDataWineLength] = useState(0);
@@ -28,7 +28,7 @@ const getDataWine = (props) => {
       redirect: 'follow'
     };
     
-    fetch(API, requestOptions)
+    fetch(API_PRODUCTS, requestOptions)
     .then(response => response.json())
     .then(result => {
         setDataWine(result);
