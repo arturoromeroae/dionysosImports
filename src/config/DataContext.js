@@ -1,8 +1,9 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 import { getDataLiquor } from './getDataLiquor';
 import { getDataWine } from './getDataWine';
 import { getDataBeer } from './getDataBeer';
 import { getDataFood } from './getDataFood';
+import { getDataCustomer } from './getDataCustomer';
 
 const ProductsContext = createContext();
 
@@ -29,13 +30,22 @@ const DataContext = (props) => {
         loadingFood,
         dataFoodLength
     } = getDataFood()
+
+    const {
+        dataCustomer: allDataCustomer,
+        loadingCustomer,
+        dataCustomerLength
+    } = getDataCustomer()
     
     const [searchDataValue, setSearchDataValue] = useState('');
+    const [searchDataValueCustomer, setSearchDataValueCustomer] = useState('');
 
     let searchedDataWine = [];
     let searchedDataLiquor = [];
     let searchedDataBeer = [];
     let searchedDataFood = [];
+
+    let searchedDataCustomer = [];
 
     if (searchDataValue.length <= 1) {
         searchedDataWine = allDataWine.data;
@@ -67,6 +77,17 @@ const DataContext = (props) => {
             const searchContent = searchDataValue.toLowerCase();
             return dataContent.includes(searchContent);
         })
+        
+    }
+    
+    if(searchDataValueCustomer.length <= 1){
+        searchedDataCustomer = allDataCustomer.data;
+    }else{
+        searchedDataCustomer = allDataCustomer.data.filter(data => {
+            const dataContent = data.filtro.toLowerCase();
+            const searchContent = searchDataValue.toLowerCase();
+            return dataContent.includes(searchContent);
+        })
     }
 
     return (
@@ -75,11 +96,14 @@ const DataContext = (props) => {
             searchedDataLiquor,
             searchedDataBeer,
             searchedDataFood,
+            searchedDataCustomer,
             loadingWine,
             loadingLiquor,
             loadingBeer,
             loadingFood,
-            setSearchDataValue
+            loadingCustomer,
+            setSearchDataValue,
+            setSearchDataValueCustomer
         }}>
             {props.children}
         </ProductsContext.Provider>

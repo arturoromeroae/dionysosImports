@@ -2,44 +2,40 @@ import { useEffect, useState } from 'react';
 
 const API_CUSTOMER = process.env.API_CUSTOMER;
 
-const getDataCustomer = (props) => {
-  const [dataFood, setDataFood] = useState([]);
-  const [loadingFood, setLoadingFood] = useState(true);
-  const [dataFoodLength, setDataFoodLength] = useState(0);
+const getDataCustomer = () => {
+  const [dataCustomer, setDataCustomer] = useState([]);
+  const [loadingCustomer, setLoadingCustomer] = useState(true);
+  const [dataCustomerLength, setDataCustomerLength] = useState(0);
 
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+  const customerHeaders = new Headers();
+  customerHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "prodclass": 3,
-    "country": 0,
-    "prodType": 0,
-    "prodVariety": 0,
-    "producer": 0,
-    "prodBrand": 0,
-    "region": "string"
+    "state": 0,
+    "city": 0,
+    "type": 0
   });
 
   useEffect(() => {
     var requestOptions = {
       method: 'POST',
-      headers: myHeaders,
+      headers: customerHeaders,
       body: raw,
       redirect: 'follow'
     };
     
-    fetch(API, requestOptions)
+    fetch(API_CUSTOMER, requestOptions)
     .then(response => response.json())
     .then(result => {
-        setDataFood(result);
-        setDataFoodLength(result.data.length)
-        setLoadingFood(false);
+        setDataCustomer(result);
+        setDataCustomerLength(result.data.length)
+        setLoadingCustomer(false);
       }
     )
     .catch(error => console.log('error', error));
   })
 
-  return { dataFood, dataFoodLength, loadingFood };
+  return { dataCustomer, dataCustomerLength, loadingCustomer };
 };
 
 export { getDataCustomer };
