@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '@styles/Header.scss';
 import banner from '@images/dionysos-logo.png';
-import logoSeven from '@images/logo-seven.png';
+import logoSeven from '@images/seven.svg';
 import { Link, useLocation } from "react-router-dom";
 import InputSearch from './InputSearch';
 import { useAuth } from '@context/authContext';
@@ -38,7 +38,7 @@ const Header = () => {
             <Link className={(location.pathname === '/products') ? 'active linkItem' : 'linkItem'} to="/products">Products</Link>
           </li>
           <li>
-            <Link className={(location.pathname === '/customer') ? 'active linkItem' : 'linkItem'} to="/customer">Customer</Link>
+            <Link className={(location.pathname === '/customers') ? 'active linkItem' : 'linkItem'} to="/customers">Customers</Link>
           </li>
           <li>
             <Link className={(location.pathname === '/distributors') ? 'active linkItem' : 'linkItem'} to="/distributors">Distributors</Link>
@@ -56,6 +56,7 @@ const Header = () => {
             <SocialButton icon={'fa-brands fa-facebook fa-1x'} />
             <SocialButton icon={'fa-brands fa-instagram fa-1x'} />
             <SocialButton icon={'fa-brands fa-twitter fa-1x'} />
+            <SocialButton icon={'fa-brands fa-linkedin fa-1x'} />
             <SocialCustomButton src={logoSeven} />
           </li>
           {user && (

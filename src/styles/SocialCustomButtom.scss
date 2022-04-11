@@ -1,0 +1,26 @@
+@use 'vars';
+
+.socialCustomButton{
+    width: 30px;
+    display: flex;
+    transition: linear 0.2s;
+    border-radius: 30px;
+    margin-inline: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialCustomButton:hover{
+    background-color: black;
+    cursor: pointer;
+    transition: linear 0.2s;
+}
+
+.socialCustomButton svg{
+    width: 52%;
+    margin: 5px;
+}
+
+.socialCustomButton:hover svg path{
+    fill: white;
+}
