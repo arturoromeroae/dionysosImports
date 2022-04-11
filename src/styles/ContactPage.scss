@@ -1,34 +1,85 @@
 @use 'vars';
 
 .contactContainer{
-    background-image: url('@images/bg_contact.jpg');
-    padding: 30px;
+    padding-top: 250px;
+    padding-bottom: 50px;
+}
+
+.addressContainer{
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-inline: 300px;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 50px;
 }
 
-.contactTitle{
-    font-size: 44px;
-    color: vars.$white;
-    padding: 2%;
-    font-weight: 400;
+.addressContainer img{
+    margin-inline: 100px;
+    width: 50%;
+    height: 100px;
 }
 
-.contactContainerForm{
-    display: flex;
+.addressContainer div{
+    width: 50%;
     padding: 20px;
 }
 
-.contactForm{
+.contactFormContainer{
     display: flex;
-    background-color: vars.$gray;
-    margin: 10px;
-    border-radius: 20px;
-    width: 519px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
 
-.contactMap{
-    margin: 10px;
+.contactForm input{
+    width: 770px;
+    height: 30px;
     border-radius: 20px;
+    border: 0;
+    background-color: vars.$beige;
+    padding-inline: 20px;
+    margin-block: 20px;
+    font-size: 20px;
+}
+
+.contactForm textarea {
+    width: 770px;
+    height: 100px;
+    margin-block: 20px;
+    background-color: vars.$beige;
+    border-radius: 20px;
+    border: 0;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.contactForm button {
+    width: 80px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+.contactEmployees{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
+.contactEmployees div{
+    text-align: center;
+    padding-top: 50px;
+    padding-inline: 100px;
+}
+
+.contactTitle{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 40px;
 }
