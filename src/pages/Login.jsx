@@ -49,8 +49,8 @@ const Login = () => {
           <form className='loginForm' onSubmit={handleSubmit}>
             <div>
               <div className='inputForm'>
-                <label>Email*</label>
-                <input id='email' name='email' type='email' maxLength={120} placeholder='E.g. example@email.com' required onChange={handleChange} />
+                <label>UserName*</label>
+                <input id='email' name='email' type='text' maxLength={120} placeholder='User Name' required onChange={handleChange} />
               </div>
               <div className='inputForm'>
                 <label>Password*</label>
