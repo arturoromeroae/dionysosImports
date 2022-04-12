@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from "@config/firebase.config";
+import Cookies from 'universal-cookie';
 
 export const contextAuth = createContext();
 
@@ -11,26 +10,25 @@ export const useAuth = () => {
 }
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loading, setLoading] = useState(true);
+    const cookies = new Cookies();
 
-    const login = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password);
-    };
+    function login() {
+        setLoading(false);
+        setIsLoggedIn(true);
+    }
+    function logout() {
+        cookies.remove('id', {path: '/'});
+        cookies.remove('nombre', {path: '/'});
+        cookies.remove('numero', {path: '/'});
+        setLoading(false);
+        setIsLoggedIn(false);
+    }
 
-    const logout = () => signOut(auth);
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            setLoading(false);
-        });
-
-        return () => unsubscribe();
-    }, [])
-    
     return (
-        <contextAuth.Provider value={{login, user, loading, logout}}>
+        <contextAuth.Provider value={{isLoggedIn, loading, login, logout}}>
+            {isLoggedIn.toString()}
             {children}
         </contextAuth.Provider>
     )

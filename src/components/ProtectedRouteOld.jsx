@@ -5,9 +5,11 @@ import Admin from '@pages/Admin';
 import LoadingAnimation from './LoadingAnimation';
 
 const ProtectedRoute = ({ children }) => {
-    const { isLoggedIn } = useAuth();
+    const { user, loading } = useAuth()
     
-    if(!isLoggedIn) return <Navigate to="/login" replace={true} />
+    if(loading) return <LoadingAnimation />
+    
+    if(!user) return <Navigate to="/login" replace={true} />
 
     return (
         <>
