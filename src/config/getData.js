@@ -8,22 +8,25 @@ const getData = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  axios.post(API_PRODUCTS, {
-    "prodclass": props.products,
-    "country": 0,
-    "prodType": 0,
-    "prodVariety": 0,
-    "producer": 0,
-    "prodBrand": 0,
-    "region": "string"
+  useEffect(() => {
+    axios.post(API_PRODUCTS,
+      {
+      "prodclass": props.products,
+      "country": 0,
+      "prodType": 0,
+      "prodVariety": 0,
+      "producer": 0,
+      "prodBrand": 0,
+      "region": "string"
+    })
+    .then(function (response) {
+      setData(response['data']);
+      setLoading(false);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
   })
-  .then(function (response) {
-    setData(response['data']);
-    setLoading(false);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
 
   return { data, loading };
 };

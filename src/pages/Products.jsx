@@ -6,13 +6,13 @@ import Banner from '@components/Banner';
 import bannerProducts from '@images/Banner.jpg';
 import TabsProductsCustom from '@components/TabsProductsCustom';
 
-const Products = () => {
+const Products = ({ info }) => {
 
   return (
     <>
       <Header />
       <Banner srcBanner={bannerProducts} title='Products' />
-      <TabsProductsCustom />
+      <TabsProductsCustom data={info} />
       <Footer />
     </>
   )
