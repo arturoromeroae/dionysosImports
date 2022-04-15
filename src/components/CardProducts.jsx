@@ -32,10 +32,6 @@ const CardProducts = ({ imageUrl,
                         <img
                             className='imageCard'
                             src={imageUrl}
-                            onError={({ currentTarget }) => {
-                                currentTarget.onerror = null; // prevents looping
-                                currentTarget.src= notFound;
-                            }}
                             alt="Image not found"
                         />
                     </div>

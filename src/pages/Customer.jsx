@@ -59,7 +59,7 @@ const Customer = () => {
           )
         }
         <div className='customersListContainer'>
-          {
+          {/* {
             customersInfo && customersInfo.slice(0, limitCustomer).map(customer => (
               <CardCustomers
                 title={customer.custname}
@@ -71,7 +71,7 @@ const Customer = () => {
                 website={customer.custwebsite}
               />
             ))
-          }
+          } */}
         </div>
       </div>
       <Footer />

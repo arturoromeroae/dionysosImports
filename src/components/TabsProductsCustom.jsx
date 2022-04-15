@@ -1,10 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import { ProductsContext } from '@config/DataContext';
+import Filters from '@components/Filters';
+import Select from '@components/Select';
+import SkeletonCardLoading from '@components/SkeletonCardLoading';
+import CardProducts from '@components/CardProducts';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import { getData } from '@config/getData';
 
 const Tab = styled(TabUnstyled)`
     color: white;
@@ -56,12 +62,31 @@ const TabsList = styled(TabsListUnstyled)`
   z-index: 1;
 `;
 
-const TabsProductsCustom = ({ children }) => {
-  const { searchDataValue, setSearchDataValue } = useContext(ProductsContext);
+const TabPanel = styled(TabPanelUnstyled)`
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+`;
 
-  const resetSearch = (e) => {
-    setSearchDataValue('');
+const TabsProductsCustom = () => {
+
+  const {
+    loading,
+    searchedData,
+  } = useContext(ProductsContext)
+  
+  const[info, setInfo] = useState(searchedData);
+
+  const resetSearch = () => {
+    setInfo(searchedData)
   }
+
+  const [limitWine, setLimitWine] = useState(12);
+  const n = 3;
+
+  const increaseLimitWine = () => {
+    setLimitWine(limitWine + 12);
+  };
 
   return (
       <TabsUnstyled defaultValue={0}>
@@ -71,7 +96,50 @@ const TabsProductsCustom = ({ children }) => {
               <Tab onClick={resetSearch}>Beer</Tab>
               <Tab onClick={resetSearch}>Foods</Tab>
           </TabsList>
-          {children}
+          <TabPanel value={0}>
+            <div className='productsFilterContainer'>
+              <Filters filterTitle='Wine Filter' count={!loading}>
+                  <Select label='Brand'  />
+                  <Select label='Country'  />
+                  <Select label='Producer'  />
+                  <Select label='Region'  />
+                  <Select label='Size'  />
+              </Filters>
+            </div>
+            {loading &&
+              [...Array(n)].map((e, i) => (
+                <div className='productsListContainerLoading'>
+                  <SkeletonCardLoading />
+                  <SkeletonCardLoading />
+                </div>
+                )
+              )
+            }
+            <div className='productsListContainer'>
+              {
+                searchedData && searchedData.slice(0, limitWine).map(wine => (
+                  <CardProducts
+                    loading={loading}
+                    key={wine.prodCode}
+                    imageUrl={wine.imagen} 
+                    title={wine.prodName}
+                    brand={wine.brand}
+                    country={wine.country}
+                    region={wine.region}
+                    size={wine.size}
+                    type={wine.prodType}
+                    variety={wine.variety}
+                    rating={wine.rating}
+                  />
+                ))
+              }
+            </div>
+            {!loading &&
+              <div className='buttonLoadMore'>
+                <button onClick={increaseLimitWine}>Load More</button>
+              </div>
+            }
+          </TabPanel>
       </TabsUnstyled>
   )
 }
